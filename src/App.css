@@ -17,12 +17,16 @@ h1 {
 .perfil-image {
   width: 200px;
   height: 180px;
-  margin-top: 300px;
-  margin-left: 43%;
+  margin: auto;
+  margin-top: 220px;
+  margin-bottom: 20px;
   background-image: url("./Design/profile.png");
   background-size: cover;
   background-position: flex;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
