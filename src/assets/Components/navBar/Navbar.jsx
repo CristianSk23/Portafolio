@@ -1,33 +1,23 @@
-import React from "react";
-import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
-const NavBarLanding = () => {
+function NavBarLanding() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse>
-        <Nav >
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
+    <Navbar expand="lg"  bg="dark" variant={"dark"}>
+      <Container >
+        <Navbar.Brand href="#home">Hi 🖐</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav"  />
+        <Navbar.Collapse id="basic-navbar-nav" >
+          <Nav className="me-auto" >
+            <Nav.Link href="#home" >Home</Nav.Link>
+            <Nav.Link href="#About">About</Nav.Link>
+            <Nav.Link href="#Portfolio">Portfolio</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
-  /* return (
-    <Navbar bg="dark" expand="lg" variant="dark">
-      <Navbar.Brand href="#home">Hi 🖐</Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse >
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  ); */
-};
+}
 
 export default NavBarLanding;
