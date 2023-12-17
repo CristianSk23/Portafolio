@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarLanding from "../src/assets/Components/navBar/Navbar";
-import Image from "react-bootstrap/Image";
 
 function App() {
   return (
@@ -9,11 +8,9 @@ function App() {
         <NavBarLanding />
       </div>
       <div className="container">
-        <div id="profile">
-          <Image
-            src="https://th.bing.com/th/id/OIP.UoKZ1EIG_m98nI96IwQF_gHaEK?rs=1&pid=ImgDetMain/200x180"
-            roundedCircle
-          />
+        <div>
+          <div className="perfil-image"></div>
+          <h2 id="name">Cristian Castaño</h2>
         </div>
         <h1>SOBRE MI</h1>
         <div>
