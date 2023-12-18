@@ -12,7 +12,7 @@ function App() {
           <div className="perfil-image"></div>
           <div id="name">
             <h2>Cristian Castaño</h2>
-            <p>Desarrollador en proceso</p>
+            <p>Desarrollador</p>
           </div>
         </div>
         <h1>SOBRE MI</h1>
