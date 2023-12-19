@@ -1,36 +1,28 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import NavBarLanding from "../src/assets/Components/navBar/Navbar";
+import NavBar from "../src/assets/Components/navBar/Navbar";
+import { makeStyles } from "@mui/styles";
+import Contact from "./assets/Components/contact/Contact";
+import MyWork from "./assets/Components/myWork/MyWork";
+import About from "./assets/Components/about_flder/About";
+import { ThemeProvider, createTheme } from "@mui/material";
+//import { createMuiTheme } from "@material-ui/core/styles";
 
+const theme = createTheme();
 function App() {
+  const classes = useStyles();
   return (
     <div>
-      <div>
-        <NavBarLanding />
-      </div>
-      <div className="container">
-        <div>
-          <div className="perfil-image"></div>
-          <div id="name">
-            <h2>Cristian Castaño</h2>
-            <p>Desarrollador</p>
-          </div>
-        </div>
-        <h1>SOBRE MI</h1>
-        <div>
-          <p>
-            ¡Hola! Soy Cristian Castaño, un desarrollador con un año de
-            experiencia en el mundo de los videojuegos. Actualmente, estoy
-            inmerso en mi formación en análisis y desarrollo de software y
-            completé con éxito un Bootcamp de Desarrollo Web. Mi fascinación por
-            la creación digital me ha guiado hacia la fusión de mis habilidades
-            en el desarrollo de videojuegos con la versatilidad del desarrollo
-            web. Me encanta explorar nuevas tecnologías y enfoques para seguir
-            creciendo como profesional.
-          </p>
-        </div>
-      </div>
+      <ThemeProvider theme={theme}>
+        <NavBar />
+        <About id="about" title="Sobre Mi" dark={true} />
+        <Contact id="contac" title="Contáctame" dark={false} />
+        <MyWork id="myWork" title="Mis trabajos" dark={true} />
+      </ThemeProvider>
     </div>
   );
 }
+
+const useStyles = makeStyles((theme) => ({
+  root: {},
+}));
 
 export default App;
