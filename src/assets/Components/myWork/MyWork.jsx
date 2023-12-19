@@ -4,8 +4,10 @@ const MyWork = ({ title, dark, id }) => {
   const classes = useStyles();
   return (
     <div className={`${classes.section} ${dark && classes.sectionDark}`}>
-  <div>MyWork</div>
-  </div>
+      <div className={classes.sectionContent} id={id}>
+        <div>MyWork</div>
+      </div>
+    </div>
   );
 };
 

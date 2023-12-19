@@ -14,7 +14,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <NavBar />
         <About id="about" title="Sobre Mi" dark={true} />
-        <Contact id="contac" title="Contáctame" dark={false} />
+        <Contact id="contact" title="Contáctame" dark={false} />
         <MyWork id="myWork" title="Mis trabajos" dark={true} />
       </ThemeProvider>
     </div>
