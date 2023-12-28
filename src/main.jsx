@@ -8,14 +8,41 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import "./index.css";
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
+
+const theme = createTheme({
+  palette: {
+    type: "dark",
+    primary: {
+      main: "#ff5722",
+    },
+    secondary: {
+      main: "#ffb74d",
+    },
+    background: {
+      default: "#000000",
+      paper: "#000000",
+    },
+    text: {
+      primary: "rgba(255,255,255,0.87)",
+    },
+  },
+});
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <CssBaseline />
-      <App />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
