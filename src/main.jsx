@@ -9,10 +9,13 @@ import "@fontsource/roboto/700.css";
 
 import "./index.css";
 import { CssBaseline } from "@mui/material";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <CssBaseline />
-    <App />
+    <BrowserRouter>
+      <CssBaseline />
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );

@@ -11,42 +11,18 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import React from "react";
 import { Drafts } from "@mui/icons-material";
 
-const NavListDrawer = () => {
+const NavListDrawer = ({ navArrayLinks }) => {
   return (
     <Box sx={{ width: 250, bgcolor: "lightBlue" }}>
-      <nav>
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <ListItemText primary="Inbox" />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Drafts />
-            </ListItemIcon>
-            <ListItemText primary="Drafts " />
-          </ListItem>
-        </List>
-      </nav>
-      <Divider />
       <List>
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#SobreMi">
-            <ListItemText>Sobre mi</ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#Trabajos">
-            <ListItemText>Trabajos</ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#Contáctame">
-            <ListItemText>Contáctame</ListItemText>
-          </ListItemButton>
-        </ListItem>
+        {navArrayLinks.map((item) => (
+          <ListItem disablePadding key={item.title}>
+            <ListItemButton component="a" href={item.path}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText>{item.title}</ListItemText>
+            </ListItemButton>
+          </ListItem>
+        ))}
       </List>
     </Box>
   );
