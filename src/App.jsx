@@ -7,6 +7,8 @@ import Jobs from "./components/Jobs/jobs";
 import InfoIcon from "@mui/icons-material/Info";
 import WorkIcon from "@mui/icons-material/Work";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
+import { Route, Routes } from "react-router-dom";
+import Contact from "./components/contactMe/contact";
 
 function App() {
   const navArrayLinks = [
@@ -31,10 +33,12 @@ function App() {
     <>
       <NavBar navArrayLinks={navArrayLinks} />
       <Container sx={{ mt: 5 }}>
-        <h1>Portafolio</h1>
-        <Home />
-        <AboutMe />
-        <Jobs />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/SobreMi" element={<AboutMe />} />
+          <Route path="/Portafolio" element={<Jobs />} />
+          <Route path="/Contactame" element={<Contact />} />
+        </Routes>
       </Container>
     </>
   );

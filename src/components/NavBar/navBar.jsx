@@ -13,10 +13,10 @@ import NavListDrawer from "./navListDrawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 
+import { NavLink } from "react-router-dom";
 
-const NavBar = ({navArrayLinks}) => {
+const NavBar = ({ navArrayLinks }) => {
   const [open, setOpen] = useState(false);
- 
 
   return (
     <>
@@ -28,15 +28,16 @@ const NavBar = ({navArrayLinks}) => {
             onClick={() => setOpen(true)}
             sx={{ display: { xs: "flex", sm: "none" } }}
           >
-            <MenuIcon />
+            <MenuIcon size="large" />
           </IconButton>
           <Typography
             variant="h6"
             sx={{ flexGrow: 1 }}
-            component="a"
-            href="#Inicio"
+            component={NavLink}
+            to="/"
             color="inherit"
           >
+            <HomeIcon />
             Inicio
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
@@ -44,8 +45,8 @@ const NavBar = ({navArrayLinks}) => {
               <Button
                 color="inherit"
                 key={item.title}
-                component="a"
-                href={item.path}
+                component={NavLink}
+                to={item.path}
               >
                 {item.title}
               </Button>
@@ -60,7 +61,11 @@ const NavBar = ({navArrayLinks}) => {
         onClose={() => setOpen(false)}
         sx={{ display: { xs: "flex", sm: "none" } }}
       >
-        <NavListDrawer navArrayLinks={navArrayLinks} />
+        <NavListDrawer
+          navArrayLinks={navArrayLinks}
+          NavLink={NavLink}
+          setOpen={setOpen}
+        />
       </Drawer>
     </>
   );

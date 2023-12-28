@@ -7,17 +7,19 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import InboxIcon from "@mui/icons-material/Inbox";
 import React from "react";
-import { Drafts } from "@mui/icons-material";
 
-const NavListDrawer = ({ navArrayLinks }) => {
+const NavListDrawer = ({ navArrayLinks, NavLink, setOpen }) => {
   return (
     <Box sx={{ width: 250, bgcolor: "lightBlue" }}>
       <List>
         {navArrayLinks.map((item) => (
           <ListItem disablePadding key={item.title}>
-            <ListItemButton component="a" href={item.path}>
+            <ListItemButton
+              component={NavLink}
+              to={item.path}
+              onClick={() => setOpen(false)}
+            >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText>{item.title}</ListItemText>
             </ListItemButton>
