@@ -11,7 +11,7 @@ import React from "react";
 
 const NavListDrawer = ({ navArrayLinks, NavLink, setOpen }) => {
   return (
-    <Box sx={{ width: 250, bgcolor: "lightBlue" }}>
+    <Box sx={{ width: 250, bgcolor: "#ff5722" }}>
       <List>
         {navArrayLinks.map((item) => (
           <ListItem disablePadding key={item.title}>
