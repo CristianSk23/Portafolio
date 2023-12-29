@@ -18,3 +18,9 @@
   background-size: cover;
   background-repeat: repeat;
 }
+
+@media (max-width: 768px) {
+  #contenImage {
+    height: 130px; /* Ajusta la altura para pantallas más pequeñas */
+  }
+}
