@@ -1,0 +1,12 @@
+.contenHome {
+  height: 1080px;
+  margin: 25px;
+  /* background-color: rgb(138, 138, 138); */
+}
+
+:target::before {
+  content: '';
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+}

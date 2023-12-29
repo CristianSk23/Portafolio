@@ -22,17 +22,11 @@ const theme = createTheme({
     },
     background: {
       default: "#000000",
-      paper: "#000000",
+      paper: "#252525",
     },
     text: {
       primary: "rgba(255,255,255,0.87)",
     },
-  },
-});
-
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
   },
 });
 

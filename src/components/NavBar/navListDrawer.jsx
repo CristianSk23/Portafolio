@@ -9,15 +9,15 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const NavListDrawer = ({ navArrayLinks, NavLink, setOpen }) => {
+const NavListDrawer = ({ navArrayLinks, setOpen }) => {
   return (
     <Box sx={{ width: 250, bgcolor: "#ff5722" }}>
       <List>
         {navArrayLinks.map((item) => (
           <ListItem disablePadding key={item.title}>
             <ListItemButton
-              component={NavLink}
-              to={item.path}
+              component="a"
+              href={item.path}
               onClick={() => setOpen(false)}
             >
               <ListItemIcon>{item.icon}</ListItemIcon>

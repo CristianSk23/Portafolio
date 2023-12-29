@@ -1,7 +1,6 @@
 import { Container } from "@mui/material";
 import NavBar from "./components/NavBar/navBar";
 import Home from "./components/Home/home";
-import AboutMe from "./components/AboutMe/aboutMe";
 import Jobs from "./components/Jobs/jobs";
 
 import InfoIcon from "@mui/icons-material/Info";
@@ -14,17 +13,17 @@ function App() {
   const navArrayLinks = [
     {
       title: "Sobre Mi",
-      path: "/SobreMi",
+      path: "#/",
       icon: <InfoIcon />,
     },
     {
       title: "Portafolio",
-      path: "/Portafolio",
+      path: "#Portafolio",
       icon: <WorkIcon />,
     },
     {
       title: "Contáctame",
-      path: "/Contactame",
+      path: "#Contactame",
       icon: <ConnectWithoutContactIcon />,
     },
   ];
@@ -33,12 +32,21 @@ function App() {
     <>
       <NavBar navArrayLinks={navArrayLinks} />
       <Container sx={{ mt: 5 }}>
-        <Routes>
+        {/*         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/SobreMi" element={<AboutMe />} />
           <Route path="/Portafolio" element={<Jobs />} />
           <Route path="/Contactame" element={<Contact />} />
-        </Routes>
+        </Routes> */}
+        <div id="/">
+          <Home />
+        </div>
+        <div id="Portafolio">
+          <Jobs />
+        </div>
+        <div id="Contactame">
+          <Contact />
+        </div>
       </Container>
     </>
   );
