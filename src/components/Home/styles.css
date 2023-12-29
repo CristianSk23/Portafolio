@@ -1,7 +1,6 @@
 .contenHome {
   height: 1080px;
   margin: 25px;
-  /* background-color: rgb(138, 138, 138); */
 }
 
 :target::before {
@@ -12,7 +11,7 @@
 }
 
 #contenImage {
-  height: 400px;
+  height: 330px;
   max-width: 100%;
   background-image: url("../Design/PresentacionBg.gif");
   background-size: cover;
@@ -21,6 +20,6 @@
 
 @media (max-width: 768px) {
   #contenImage {
-    height: 130px; /* Ajusta la altura para pantallas más pequeñas */
+    height: 130px;
   }
 }

@@ -1,15 +1,14 @@
 import React from "react";
-import "./styles.css";
 import { Container } from "@mui/material";
+import "./styles.css";
 const Contact = () => {
   return (
     <>
       <Container>
-        <Container id="titleContact" >
-          {" "}
-        </Container>
-        <div></div>
-        <div className="contenContact">Contact</div>
+        {/* <div id="titleContact"></div> */}
+        <div className="contenContact">
+          <h3 id="titleAnimation">Contáctame</h3>
+        </div>
       </Container>
     </>
   );

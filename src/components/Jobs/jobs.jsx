@@ -5,7 +5,12 @@ const Jobs = () => {
   return (
     <Paper>
       <Container elevation={4}>
-        <div className="contenJobs">Jobs</div>
+        <div className="contenJobs">
+
+        <h3 id="titleJobs">Portafolio</h3>
+
+
+        </div>
       </Container>
     </Paper>
   );

@@ -3,3 +3,31 @@
   margin: 25px;
   /* background-color: rgb(138, 138, 138); */
 }
+
+@media (max-width: 768px) {
+  #contenImage {
+    height: 130px;
+  }
+}
+
+#titleJobs {
+  animation: animation 3.5s steps(35) infinite,
+    transparent 0.5s step-end infinite alternate;
+  width: 12.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 5ch;
+  border-right: 3px solid;
+}
+
+@keyframes animation {
+  from {
+    width: 0px;
+  }
+}
+
+@keyframes transparent {
+  50% {
+    border-color: transparent;
+  }
+}
