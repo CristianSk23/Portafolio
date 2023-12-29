@@ -7,7 +7,7 @@ function Home() {
     <Paper elevation={4}>
       <Container>
         <div className="contenHome">
-          <h1>¡Hola! Soy Cristian Stiven Castaño.</h1>
+          <div id="contenImage"></div>
           <h5>
             un amante de la programación con un año de experiencia en el
             desarrollo de videojuegos y ahora sumergido en el mundo del

@@ -5,8 +5,16 @@
 }
 
 :target::before {
-  content: '';
+  content: "";
   display: block;
   height: 80px;
   margin-top: -80px;
+}
+
+#contenImage {
+  height: 400px;
+  max-width: 100%;
+  background-image: url("../Design/PresentacionBg.gif");
+  background-size: cover;
+  background-repeat: repeat;
 }
