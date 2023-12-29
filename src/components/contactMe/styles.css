@@ -7,7 +7,7 @@
 #titleAnimation {
   animation: animation 3.5s steps(35) infinite,
     transparent 0.5s step-end infinite alternate;
-  width: 12.1em;
+  width: 7em;
   white-space: nowrap;
   overflow: hidden;
   font-size: 5ch;
