@@ -34,19 +34,19 @@ function Home() {
                   rowSpacing={1}
                   columnSpacing={{ xs: 1, sm: 2, md: 3 }}
                 >
-                  <Grid xs={2}>
+                  <Grid xs={4}>
                     <DiJavascript1 id="designIcon" />
                   </Grid>
-                  <Grid xs={2}>
+                  <Grid xs={4}>
                     <DiReact id="designIcon"/>
                   </Grid>
-                  <Grid xs={2}>
+                  <Grid xs={4}>
                     <DiNodejs id="designIcon"/>
                   </Grid>
-                  <Grid xs={2}>
+                  <Grid xs={4}>
                     <DiPostgresql id="designIcon"/>
                   </Grid>
-                  <Grid xs={2}>
+                  <Grid xs={4}>
                     <DiUnitySmall id="designIcon"/>
                   </Grid>
                 </Grid>
