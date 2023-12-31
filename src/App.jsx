@@ -8,23 +8,24 @@ import WorkIcon from "@mui/icons-material/Work";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 import { Route, Routes } from "react-router-dom";
 import Contact from "./components/contactMe/contact";
+import { pink } from "@mui/material/colors";
 
 function App() {
   const navArrayLinks = [
     {
       title: "Sobre Mi",
       path: "#/",
-      icon: <InfoIcon />,
+      icon: <InfoIcon color="secondary" />,
     },
     {
       title: "Portafolio",
       path: "#Portafolio",
-      icon: <WorkIcon />,
+      icon: <WorkIcon color="secondary" />,
     },
     {
       title: "Contáctame",
       path: "#Contactame",
-      icon: <ConnectWithoutContactIcon />,
+      icon: <ConnectWithoutContactIcon color="secondary" />,
     },
   ];
 

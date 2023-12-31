@@ -6,10 +6,10 @@ const Jobs = () => {
     <Paper>
       <Container elevation={4}>
         <div className="contenJobs">
-
-        <h3 id="titleJobs">Portafolio</h3>
-
-
+          <h3 id="titleJobs">
+            {" "}
+            <code>&lt;Portafolio&gt;</code>
+          </h3>
         </div>
       </Container>
     </Paper>

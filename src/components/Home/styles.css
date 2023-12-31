@@ -23,3 +23,13 @@
     height: 130px;
   }
 }
+
+#infoPersonal {
+  height: 300px;
+  padding: 10px;
+  text-align: center;
+}
+
+#designIcon{
+  font-size: 100px;
+}

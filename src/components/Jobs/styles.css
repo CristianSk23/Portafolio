@@ -11,13 +11,14 @@
 }
 
 #titleJobs {
-  animation: animation 3.5s steps(35) infinite,
+  animation: animation 4s steps(35) infinite,
     transparent 0.5s step-end infinite alternate;
-  width: 5em;
+  width: 6.5em;
   white-space: nowrap;
   overflow: hidden;
   font-size: 5ch;
   border-right: 3px solid;
+  color: rgb(255, 0, 0);
 }
 
 @keyframes animation {
