@@ -22,8 +22,14 @@
   #contenImage {
     height: 130px;
   }
-  #designIcon {
-    font-size: 20px;
+  #icons {
+    width: 20px;
+    height: 20px;
+    padding-top: 52px;
+    margin: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
@@ -37,22 +43,32 @@
   justify-content: center;
 }
 #icons {
-  width: 80px;
-  height: 80px;
-  padding-top: 105px;
-  margin: 20px;
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex;
+  align-items: center;
+  text-align: center;
 }
+/* #icons p {
+  margin-top: 100px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #fffefe;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex;
+  align-items: center;
+  text-align: center;
+} */
 
 #icons img {
   display: none; /* Oculta la etiqueta de imagen si decides usar el fondo */
-}
-
-#designIcon {
-  font-size: 100px;
-  padding: 10px;
 }
 
 /* .contenIcons {

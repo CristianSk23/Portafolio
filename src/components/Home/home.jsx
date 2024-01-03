@@ -16,6 +16,52 @@ import unityIcon from "../Design/icons/unity.png";
 import githubIcon from "../Design/icons/github.png";
 
 function Home() {
+  const iconsData = [
+    {
+      icon: jsIcon,
+      label: "JavaScript",
+    },
+    {
+      icon: reactIcon,
+      label: "React.Js",
+    },
+    {
+      icon: nodeIcon,
+      label: "Node.Js",
+    },
+    {
+      icon: reduxIcon,
+      label: "Redux.Js",
+    },
+    {
+      icon: cssIcon,
+      label: "Css",
+    },
+    {
+      icon: htmlIcon,
+      label: "Html",
+    },
+    {
+      icon: materialIcon,
+      label: "MaterialUi",
+    },
+    {
+      icon: csharpIcon,
+      label: "C#",
+    },
+    {
+      icon: bootstrapIcon,
+      label: "Bootstrap",
+    },
+    {
+      icon: unityIcon,
+      label: "Unity",
+    },
+    {
+      icon: githubIcon,
+      label: "Github",
+    },
+  ];
   return (
     <Paper elevation={4}>
       <Container>
@@ -39,103 +85,16 @@ function Home() {
                   rowSpacing={1}
                   columnSpacing={{ xs: 1, sm: 2, md: 3 }}
                 >
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${jsIcon})` }}
-                    >
-                      <p>JavaScript</p>
-                    </div>
-                  </Grid>
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${reactIcon})` }}
-                    >
-                      <p>React.Js</p>
-                    </div>
-                  </Grid>
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${nodeIcon})` }}
-                    >
-                      <p>Node.Js</p>
-                    </div>
-                  </Grid>
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${reduxIcon})` }}
-                    >
-                      {" "}
-                      <p>Redux.Js</p>
-                    </div>
-                  </Grid>
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${cssIcon})` }}
-                    >
-                      {" "}
-                      <p>Css</p>
-                    </div>
-                  </Grid>
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${htmlIcon})` }}
-                    >
-                      {" "}
-                      <p>Html</p>
-                    </div>
-                  </Grid>
-
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${materialIcon})` }}
-                    >
-                      {" "}
-                      <p>MaterialUi</p>
-                    </div>
-                  </Grid>
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${csharpIcon})` }}
-                    >
-                      {" "}
-                      <p>C#</p>
-                    </div>
-                  </Grid>
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${bootstrapIcon})` }}
-                    >
-                      {" "}
-                      <p>Bootstrap</p>
-                    </div>
-                  </Grid>
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${unityIcon})` }}
-                    >
-                      {" "}
-                      <p>Unity</p>
-                    </div>
-                  </Grid>
-                  <Grid xs={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${githubIcon})` }}
-                    >
-                      {" "}
-                      <p>Github</p>
-                    </div>
-                  </Grid>
+                  {iconsData.map((icon, index) => (
+                    <Grid key={index} xs={3}>
+                      <div
+                        id="icons"
+                        style={{ backgroundImage: `url(${icon.icon})` }}
+                      >
+                        <p>{icon.label}</p>
+                      </div>
+                    </Grid>
+                  ))}
                 </Grid>
               </Box>
             </div>
