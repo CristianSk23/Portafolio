@@ -22,14 +22,38 @@
   #contenImage {
     height: 130px;
   }
+  #designIcon {
+    font-size: 20px;
+  }
 }
 
 #infoPersonal {
-  height: 300px;
+  height: 200px;
   padding: 10px;
+  margin-bottom: 5px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#icons {
+  width: 80px;
+  height: 80px;
+  padding-top: 105px;
+  margin: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-#designIcon{
-  font-size: 100px;
+#icons img {
+  display: none; /* Oculta la etiqueta de imagen si decides usar el fondo */
 }
+
+#designIcon {
+  font-size: 100px;
+  padding: 10px;
+}
+
+/* .contenIcons {
+} */

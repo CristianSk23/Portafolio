@@ -6,10 +6,9 @@ import Jobs from "./components/Jobs/jobs";
 import InfoIcon from "@mui/icons-material/Info";
 import WorkIcon from "@mui/icons-material/Work";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
-import { Route, Routes } from "react-router-dom";
-import Contact from "./components/contactMe/contact";
-import { pink } from "@mui/material/colors";
 
+import Contact from "./components/contactMe/contact";
+import "./StylesA.css";
 function App() {
   const navArrayLinks = [
     {

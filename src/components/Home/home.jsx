@@ -2,13 +2,18 @@ import { Box, Container, Paper, Typography } from "@mui/material";
 import React from "react";
 import "./styles.css";
 
-import { DiJavascript1 } from "react-icons/di";
-import { DiReact } from "react-icons/di";
-import { DiNodejs } from "react-icons/di";
-import { DiPostgresql } from "react-icons/di";
-import { DiUnitySmall } from "react-icons/di";
-
 import Grid from "@mui/material/Unstable_Grid2";
+import jsIcon from "../Design/icons/js.png";
+import reactIcon from "../Design/icons/react.png";
+import nodeIcon from "../Design/icons/nodejs.png";
+import reduxIcon from "../Design/icons/redux.png";
+import cssIcon from "../Design/icons/css.png";
+import htmlIcon from "../Design/icons/html.png";
+import materialIcon from "../Design/icons/MaterialUi.png";
+import csharpIcon from "../Design/icons/c-sharp.png";
+import bootstrapIcon from "../Design/icons/bootstrap.png";
+import unityIcon from "../Design/icons/unity.png";
+import githubIcon from "../Design/icons/github.png";
 
 function Home() {
   return (
@@ -24,7 +29,7 @@ function Home() {
           </h5>
           <div id="contenSkills">
             <Typography variant="h3" sx={{ flexGrow: 1 }}>
-              SKILLS
+              Tecnologías
             </Typography>
 
             <div id="contenIcons">
@@ -34,20 +39,102 @@ function Home() {
                   rowSpacing={1}
                   columnSpacing={{ xs: 1, sm: 2, md: 3 }}
                 >
-                  <Grid xs={4}>
-                    <DiJavascript1 id="designIcon" />
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${jsIcon})` }}
+                    >
+                      <p>JavaScript</p>
+                    </div>
                   </Grid>
-                  <Grid xs={4}>
-                    <DiReact id="designIcon"/>
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${reactIcon})` }}
+                    >
+                      <p>React.Js</p>
+                    </div>
                   </Grid>
-                  <Grid xs={4}>
-                    <DiNodejs id="designIcon"/>
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${nodeIcon})` }}
+                    >
+                      <p>Node.Js</p>
+                    </div>
                   </Grid>
-                  <Grid xs={4}>
-                    <DiPostgresql id="designIcon"/>
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${reduxIcon})` }}
+                    >
+                      {" "}
+                      <p>Redux.Js</p>
+                    </div>
                   </Grid>
-                  <Grid xs={4}>
-                    <DiUnitySmall id="designIcon"/>
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${cssIcon})` }}
+                    >
+                      {" "}
+                      <p>Css</p>
+                    </div>
+                  </Grid>
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${htmlIcon})` }}
+                    >
+                      {" "}
+                      <p>Html</p>
+                    </div>
+                  </Grid>
+
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${materialIcon})` }}
+                    >
+                      {" "}
+                      <p>MaterialUi</p>
+                    </div>
+                  </Grid>
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${csharpIcon})` }}
+                    >
+                      {" "}
+                      <p>C#</p>
+                    </div>
+                  </Grid>
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${bootstrapIcon})` }}
+                    >
+                      {" "}
+                      <p>Bootstrap</p>
+                    </div>
+                  </Grid>
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${unityIcon})` }}
+                    >
+                      {" "}
+                      <p>Unity</p>
+                    </div>
+                  </Grid>
+                  <Grid xs={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${githubIcon})` }}
+                    >
+                      {" "}
+                      <p>Github</p>
+                    </div>
                   </Grid>
                 </Grid>
               </Box>
