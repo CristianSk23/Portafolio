@@ -22,15 +22,6 @@
   #contenImage {
     height: 130px;
   }
-  #icons {
-    width: 20px;
-    height: 20px;
-    padding-top: 52px;
-    margin: 10px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
 }
 
 #infoPersonal {
@@ -45,27 +36,15 @@
 #icons {
   width: 100%;
   height: 100%;
-  margin-top: 10px;
+  margin: 20px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex;
-  align-items: center;
+}
+
+#designText {
   text-align: center;
 }
-/* #icons p {
-  margin-top: 100px;
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: #fffefe;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex;
-  align-items: center;
-  text-align: center;
-} */
 
 #icons img {
   display: none; /* Oculta la etiqueta de imagen si decides usar el fondo */

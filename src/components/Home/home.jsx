@@ -74,7 +74,14 @@ function Home() {
             universo del desarrollo de software.
           </h5>
           <div id="contenSkills">
-            <Typography variant="h3" sx={{ flexGrow: 1 }}>
+            <Typography
+              variant="h3"
+              sx={{
+                flexGrow: 1,
+                fontSize: "2.5rem",
+                textAlign: "initial",
+              }}
+            >
               Tecnologías
             </Typography>
 
@@ -82,16 +89,27 @@ function Home() {
               <Box sx={{ width: "100%" }}>
                 <Grid
                   container
-                  rowSpacing={1}
-                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                  rowSpacing={10}
+                  columnSpacing={{ xs: 1, sm: 1, md: 2 }}
                 >
                   {iconsData.map((icon, index) => (
-                    <Grid key={index} xs={3}>
+                    <Grid key={index} item xs={4} sm={6} md={4} lg={3}>
                       <div
                         id="icons"
                         style={{ backgroundImage: `url(${icon.icon})` }}
-                      >
-                        <p>{icon.label}</p>
+                      ></div>
+                      <div id="designText">
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            flexGrow: 1,
+                            fontSize: "2rem",
+                            textAlign: "center",
+                            "@media (max-width:600px)": { fontSize: "1rem" },
+                          }}
+                        >
+                          {icon.label}
+                        </Typography>
                       </div>
                     </Grid>
                   ))}
