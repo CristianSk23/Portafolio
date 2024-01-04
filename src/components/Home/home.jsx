@@ -103,9 +103,13 @@ function Home() {
                           variant="h5"
                           sx={{
                             flexGrow: 1,
-                            fontSize: "2rem",
+                            fontSize: "1.6rem",
                             textAlign: "center",
-                            "@media (max-width:600px)": { fontSize: "1rem" },
+                            paddingLeft: "15%",
+                            "@media (max-width:600px)": {
+                              fontSize: "1rem",
+                              paddingLeft: "35%",
+                            },
                           }}
                         >
                           {icon.label}
