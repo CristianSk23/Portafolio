@@ -75,6 +75,7 @@ function Home() {
                 textAlign: "initial",
                 "@media (max-width:600px)": {
                   fontSize: "1.5rem",
+                  padding: "10px"
                 },
               }}
             >
@@ -94,6 +95,9 @@ function Home() {
                 flexGrow: 1,
                 fontSize: "2.5rem",
                 textAlign: "initial",
+                "@media (max-width:600px)": {
+                  padding: "8%",
+                },
               }}
             >
               Tecnologías
