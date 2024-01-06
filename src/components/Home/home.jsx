@@ -78,7 +78,8 @@ function Home() {
                 },
               }}
             >
-              ¡HOLA! Soy Cristian Castaño <br></br>Desarrollador FullStack
+              ¡HOLA! Soy Cristian Castaño <br></br>{" "}
+              <strong>Desarrollador FullStack</strong>
             </Typography>
           </div>
           <h5 id="infoPersonal"></h5>
