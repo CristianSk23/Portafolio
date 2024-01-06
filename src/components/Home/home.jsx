@@ -75,19 +75,29 @@ function Home() {
                 textAlign: "initial",
                 "@media (max-width:600px)": {
                   fontSize: "1.5rem",
-                  padding: "10px"
                 },
               }}
             >
               ¡HOLA! Soy Cristian Castaño <br></br>Desarrollador FullStack
             </Typography>
           </div>
-          <h5 id="infoPersonal">
+          <h5 id="infoPersonal"></h5>
+          <Typography
+            variant="h5"
+            sx={{
+              flexGrow: 1,
+              fontSize: "2.5rem",
+              textAlign: "initial",
+              "@media (max-width:600px)": {
+                fontSize: "1.5rem",
+              },
+            }}
+          >
             Un amante de la programación con un año de experiencia en el
             desarrollo de videojuegos y ahora sumergido en el mundo del
             desarrollo web. Estoy en pleno curso de aprender más sobre el mágico
             universo del desarrollo de software.
-          </h5>
+          </Typography>
           <div id="contenSkills">
             <Typography
               variant="h3"
@@ -107,7 +117,7 @@ function Home() {
             <Box sx={{ width: "100%" }}>
               <Grid
                 container
-                rowSpacing={10}
+                rowSpacing={8}
                 columnSpacing={{ xs: 1, sm: 1, md: 2 }}
               >
                 {iconsData.map((icon, index) => (
