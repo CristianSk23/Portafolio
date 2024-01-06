@@ -15,7 +15,7 @@
 }
 
 @media (max-width: 768px) {
-  #icons{
+  #icons {
     width: 50%;
     height: 50%;
     margin: 20px;
@@ -38,10 +38,3 @@
 #icons img {
   display: none; /* Oculta la etiqueta de imagen si decides usar el fondo */
 }
-
-#contenSkills {
-  padding: 10px;
-}
-
-/* .contenIcons {
-} */

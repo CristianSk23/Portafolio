@@ -98,15 +98,17 @@ function Home() {
             desarrollo web. Estoy en pleno curso de aprender más sobre el mágico
             universo del desarrollo de software.
           </Typography>
+
           <div id="contenSkills">
             <Typography
               variant="h3"
               sx={{
                 flexGrow: 1,
                 fontSize: "2.5rem",
-                textAlign: "initial",
+                textAlign: "left",
                 "@media (max-width:600px)": {
-                  padding: "8%",
+                  paddingTop: "20px",
+                  paddingBottom: "10px",
                 },
               }}
             >
