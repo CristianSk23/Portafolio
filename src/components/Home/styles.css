@@ -11,11 +11,8 @@
 }
 
 #contenImage {
-  height: 330px;
-  max-width: 100%;
-  background-image: url("../Design/PresentacionBg.gif");
-  background-size: cover;
-  background-repeat: repeat;
+
+  padding-top: 50px;
 }
 
 @media (max-width: 768px) {
@@ -48,6 +45,10 @@
 
 #icons img {
   display: none; /* Oculta la etiqueta de imagen si decides usar el fondo */
+}
+
+#contenSkills{
+  padding: 10px;
 }
 
 /* .contenIcons {

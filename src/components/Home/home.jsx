@@ -66,9 +66,23 @@ function Home() {
     <Paper elevation={4}>
       <Container>
         <div className="contenHome">
-          <div id="contenImage"></div>
+          <div id="contenImage">
+            <Typography
+              variant="h1"
+              sx={{
+                flexGrow: 1,
+                fontSize: "3.5rem",
+                textAlign: "initial",
+                "@media (max-width:600px)": {
+                  fontSize: "1.5rem",
+                },
+              }}
+            >
+              ¡HOLA! Soy Cristian Castaño <br></br>Desarrollador FullStack
+            </Typography>
+          </div>
           <h5 id="infoPersonal">
-            un amante de la programación con un año de experiencia en el
+            Un amante de la programación con un año de experiencia en el
             desarrollo de videojuegos y ahora sumergido en el mundo del
             desarrollo web. Estoy en pleno curso de aprender más sobre el mágico
             universo del desarrollo de software.
@@ -84,42 +98,41 @@ function Home() {
             >
               Tecnologías
             </Typography>
-
-            <div id="contenIcons">
-              <Box sx={{ width: "100%" }}>
-                <Grid
-                  container
-                  rowSpacing={10}
-                  columnSpacing={{ xs: 1, sm: 1, md: 2 }}
-                >
-                  {iconsData.map((icon, index) => (
-                    <Grid key={index} item xs={4} sm={6} md={4} lg={3}>
-                      <div
-                        id="icons"
-                        style={{ backgroundImage: `url(${icon.icon})` }}
-                      ></div>
-                      <div id="designText">
-                        <Typography
-                          variant="h5"
-                          sx={{
-                            flexGrow: 1,
-                            fontSize: "1.6rem",
-                            textAlign: "center",
-                            paddingLeft: "15%",
-                            "@media (max-width:600px)": {
-                              fontSize: "1rem",
-                              paddingLeft: "35%",
-                            },
-                          }}
-                        >
-                          {icon.label}
-                        </Typography>
-                      </div>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Box>
-            </div>
+          </div>
+          <div id="contenIcons">
+            <Box sx={{ width: "100%" }}>
+              <Grid
+                container
+                rowSpacing={10}
+                columnSpacing={{ xs: 1, sm: 1, md: 2 }}
+              >
+                {iconsData.map((icon, index) => (
+                  <Grid key={index} item xs={4} sm={6} md={4} lg={3}>
+                    <div
+                      id="icons"
+                      style={{ backgroundImage: `url(${icon.icon})` }}
+                    ></div>
+                    <div id="designText">
+                      <Typography
+                        variant="h5"
+                        sx={{
+                          flexGrow: 1,
+                          fontSize: "1.6rem",
+                          textAlign: "center",
+                          paddingLeft: "15%",
+                          "@media (max-width:600px)": {
+                            fontSize: "1rem",
+                            paddingLeft: "35%",
+                          },
+                        }}
+                      >
+                        {icon.label}
+                      </Typography>
+                    </div>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
           </div>
         </div>
       </Container>
