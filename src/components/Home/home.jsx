@@ -75,6 +75,8 @@ function Home() {
                 textAlign: "initial",
                 "@media (max-width:600px)": {
                   fontSize: "1.5rem",
+                  paddingTop: "20px",
+                  paddingBottom: "10px",
                 },
               }}
             >
@@ -87,10 +89,14 @@ function Home() {
             variant="h5"
             sx={{
               flexGrow: 1,
-              fontSize: "2.5rem",
+              fontSize: "2rem",
               textAlign: "initial",
+              paddingTop: "20px",
+              paddingBottom: "10px",
               "@media (max-width:600px)": {
                 fontSize: "1.5rem",
+                paddingTop: "10px",
+                paddingBottom: "5px",
               },
             }}
           >
@@ -107,10 +113,8 @@ function Home() {
                 flexGrow: 1,
                 fontSize: "2.5rem",
                 textAlign: "left",
-                "@media (max-width:600px)": {
-                  paddingTop: "20px",
-                  paddingBottom: "10px",
-                },
+                paddingTop: "20px",
+                paddingBottom: "10px",
               }}
             >
               Tecnologías
