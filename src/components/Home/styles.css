@@ -22,15 +22,6 @@
   }
 }
 
-#icons {
-  width: 100%;
-  height: 100%;
-  margin: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 #designText {
   text-align: center;
 }
@@ -38,3 +29,5 @@
 #icons img {
   display: none; /* Oculta la etiqueta de imagen si decides usar el fondo */
 }
+
+

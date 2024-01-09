@@ -1,4 +1,4 @@
-import { Box, Container, Paper, Typography } from "@mui/material";
+import { Avatar, Box, Container, Paper, Typography } from "@mui/material";
 import React from "react";
 import "./styles.css";
 
@@ -14,6 +14,8 @@ import csharpIcon from "../Design/icons/c-sharp.png";
 import bootstrapIcon from "../Design/icons/bootstrap.png";
 import unityIcon from "../Design/icons/unity.png";
 import githubIcon from "../Design/icons/github.png";
+import perfil from "../Design/Perfil.jpg";
+import perfilAi from "../Design/perfilAi.jpg";
 
 function Home() {
   const iconsData = [
@@ -72,11 +74,14 @@ function Home() {
               sx={{
                 flexGrow: 1,
                 fontSize: "3.5rem",
-                textAlign: "initial",
+                textAlign: "center",
+                marginLeft: "220px",
                 "@media (max-width:600px)": {
-                  fontSize: "1.5rem",
-                  paddingTop: "20px",
-                  paddingBottom: "10px",
+                  height: "100px",
+                  width: "100%",
+                  fontSize: "1.6rem",
+                  marginTop: "-20px",
+                  marginLeft: "0px",
                 },
               }}
             >
@@ -84,19 +89,39 @@ function Home() {
               <strong>Desarrollador FullStack</strong>
             </Typography>
           </div>
-          <h5 id="infoPersonal"></h5>
+          <Avatar
+            alt="Cristian Castaño"
+            src={perfilAi}
+            sx={{
+              width: 250,
+              height: 250,
+              marginTop: "60px",
+              "@media (max-width:600px)": {
+                width: 125,
+                height: 125,
+                marginTop: "0px",
+                marginBottom: "10px",
+              },
+            }}
+          />
           <Typography
             variant="h5"
             sx={{
               flexGrow: 1,
-              fontSize: "2rem",
-              textAlign: "initial",
-              paddingTop: "20px",
-              paddingBottom: "10px",
+              width: "786px",
+              height: "311px",
+              fontSize: "1.5rem",
+              textAlign: "center",
+              marginLeft: "280px",
+              marginTop: "-200px",
               "@media (max-width:600px)": {
                 fontSize: "1.5rem",
                 paddingTop: "10px",
                 paddingBottom: "5px",
+                marginTop: "0px",
+                marginLeft: "5px",
+                width: "auto",
+                height: "300px",
               },
             }}
           >
@@ -112,38 +137,63 @@ function Home() {
               sx={{
                 flexGrow: 1,
                 fontSize: "2.5rem",
-                textAlign: "left",
-                paddingTop: "20px",
-                paddingBottom: "10px",
+                textAlign: "center",
+                marginTop: "-150px",
+                marginLeft: "230px",
+                marginBottom: "20px",
+                "@media (max-width:600px)": {
+                  marginLeft: "0px",
+                  marginTop: "10px",
+                },
               }}
             >
               Tecnologías
             </Typography>
           </div>
           <div id="contenIcons">
-            <Box sx={{ width: "100%" }}>
+            <Box
+              sx={{
+                width: "100%",
+                marginLeft: "200px",
+                "@media (max-width:600px)": {
+                  marginLeft: "0px",
+                },
+              }}
+            >
               <Grid
                 container
-                rowSpacing={8}
-                columnSpacing={{ xs: 1, sm: 1, md: 2 }}
+                rowSpacing={1}
+                columnSpacing={{ xs: 1, sm: 1, md: 2, lg: 1 }}
               >
                 {iconsData.map((icon, index) => (
                   <Grid key={index} item xs={4} sm={6} md={4} lg={3}>
-                    <div
-                      id="icons"
-                      style={{ backgroundImage: `url(${icon.icon})` }}
-                    ></div>
+                    <div>
+                      <Avatar
+                        alt="Icons"
+                        src={icon.icon}
+                        sx={{
+                          width: 80,
+                          height: 80,
+                          marginTop: "20px",
+                          "@media (max-width:600px)": {
+                            width: 50,
+                            height: 50,
+                            marginTop: "10px",
+                          },
+                        }}
+                      />
+                    </div>
                     <div id="designText">
                       <Typography
                         variant="h5"
                         sx={{
                           flexGrow: 1,
                           fontSize: "1.6rem",
-                          textAlign: "center",
-                          paddingLeft: "15%",
+                          textAlign: "initial",
+                          marginTop: "10px",
                           "@media (max-width:600px)": {
                             fontSize: "1rem",
-                            paddingLeft: "35%",
+                            paddingLeft: "0px",
                           },
                         }}
                       >
@@ -162,3 +212,14 @@ function Home() {
 }
 
 export default Home;
+
+/*    id="icons"
+                      style={{
+                        backgroundImage: `url(${icon.icon})`,
+                        width: "100%",
+                        height: "100%",
+                        margin: "20px",
+                        backgroundSize: "contain",
+                        backgroundRepeat: "norepeat",
+                        backgroundPosition: "center",
+                      }} */

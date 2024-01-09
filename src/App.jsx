@@ -31,23 +31,16 @@ function App() {
   return (
     <>
       <NavBar navArrayLinks={navArrayLinks} />
-      <Container sx={{ mt: 5 }}>
-        {/*         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/SobreMi" element={<AboutMe />} />
-          <Route path="/Portafolio" element={<Jobs />} />
-          <Route path="/Contactame" element={<Contact />} />
-        </Routes> */}
-        <div id="/">
-          <Home />
-        </div>
-        <div id="Portafolio">
-          <Jobs />
-        </div>
-        <div id="Contactame">
-          <Contact />
-        </div>
-      </Container>
+
+      <div id="/">
+        <Home />
+      </div>
+      <div id="Portafolio">
+        <Jobs />
+      </div>
+      <div id="Contactame">
+        <Contact />
+      </div>
     </>
   );
 }
