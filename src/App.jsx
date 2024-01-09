@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import NavBar from "./components/NavBar/navBar";
 import Home from "./components/Home/home";
 import Jobs from "./components/Jobs/jobs";
+import About from "./components/aboutMe/aboutMe";
 
 import InfoIcon from "@mui/icons-material/Info";
 import WorkIcon from "@mui/icons-material/Work";
@@ -13,7 +14,7 @@ function App() {
   const navArrayLinks = [
     {
       title: "Sobre Mi",
-      path: "#/",
+      path: "#SobreMi",
       icon: <InfoIcon color="secondary" />,
     },
     {
@@ -34,6 +35,9 @@ function App() {
 
       <div id="/">
         <Home />
+      </div>
+      <div id="SobreMi">
+        <About />
       </div>
       <div id="Portafolio">
         <Jobs />
