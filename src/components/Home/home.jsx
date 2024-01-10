@@ -1,28 +1,58 @@
-import { Avatar, Box, Container, Paper, Typography } from "@mui/material";
-import React from "react";
+import { Box, Button, Container, Paper, Typography } from "@mui/material";
+import React, { useState } from "react";
 import "./styles.css";
+//Icons
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ArticleIcon from "@mui/icons-material/Article";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import CheckIcon from "@mui/icons-material/Check";
+//Links
+import cvLink from "./cvPdf/Cristian_Castano_Cv.pdf";
 
-import perfil from "../Design/Perfil.jpg";
-import perfilAi from "../Design/perfilAi.jpg";
+const email = "cristian200127@gmail.com";
 
 function Home() {
+  const [copied, setCopied] = useState(false);
+  const [iconChange, setIconChange] = useState(false);
+
+  const urlGit = "https://github.com/CristianSk23";
+  const newWindoGit = () => {
+    window.open(urlGit);
+  };
+  const urlLinke = "https://www.linkedin.com/in/cristian-castano23/";
+  const newWindoLinke = () => {
+    window.open(urlLinke);
+  };
+
+  const copyEmail = async () => {
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true);
+      setIconChange(true);
+      setTimeout(() => {
+        setCopied(false), setIconChange(false);
+        console.log("iconChange" + icon);
+      }, 5000);
+    });
+  };
+
   return (
     <Paper elevation={4}>
       <Container>
         <div className="contenHome">
-          <div id="contenImage">
+          <div id="contenTitle">
             <Typography
               variant="h1"
               sx={{
                 flexGrow: 1,
                 fontSize: "4rem",
                 textAlign: "center",
-                marginTop: "200px",
+                marginTop: "300px",
                 "@media (max-width:600px)": {
                   height: "100px",
                   width: "100%",
                   fontSize: "1.6rem",
-                  marginTop: "-20px",
+                  marginTop: "300px",
                   marginLeft: "0px",
                 },
               }}
@@ -31,6 +61,109 @@ function Home() {
               <strong>Desarrollador FullStack</strong>
             </Typography>
           </div>
+          <Box
+            sx={{
+              marginTop: "20px",
+              marginLeft: "36%",
+              "@media (max-width:600px)": {
+                marginLeft: "0px",
+                textAlign: "center",
+                marginTop: "-10px",
+              },
+            }}
+          >
+            {" "}
+            <Typography
+              variant="h5"
+              sx={{
+                "@media (max-width:600px)": {
+                  fontSize: "1rem",
+                },
+              }}
+            >
+              cristian200127@gmail.com
+            </Typography>
+            <Button
+              onClick={copyEmail}
+              variant="outlined"
+              startIcon={iconChange ? <CheckIcon /> : <ContentCopyIcon />}
+              sx={{
+                color: "white",
+                marginLeft: "320px",
+                marginTop: "-55px",
+                "@media (max-width:600px)": {
+                  fontSize: "0.6rem",
+                  marginLeft: "25px",
+                  marginTop: "20px",
+                  marginBottom: "30px",
+                  width: "75px",
+                  height: "25px",
+                },
+              }}
+            >
+              {copied ? "Copiado" : "Copiar"}
+            </Button>
+          </Box>
+          <Box
+            sx={{
+              "& button": { m: 1 },
+              marginTop: "20px",
+              marginLeft: "33%",
+              "@media (max-width:600px)": {
+                marginTop: "-10px",
+                marginLeft: "10%",
+              },
+            }}
+          >
+            <Button
+              variant="contained"
+              startIcon={<GitHubIcon />}
+              onClick={newWindoGit}
+              sx={{
+                color: "white",
+                "@media (max-width:600px)": {
+                  fontSize: "0.5rem",
+                  width: "80px",
+                  height: "30px",
+                },
+              }}
+            >
+              Github
+            </Button>
+            <Button
+              variant="contained"
+              startIcon={<LinkedInIcon />}
+              onClick={newWindoLinke}
+              sx={{
+                marginLeft: "10px",
+                color: "white",
+                "@media (max-width:600px)": {
+                  fontSize: "0.5rem",
+                  width: "80px",
+                  height: "30px",
+                },
+              }}
+            >
+              LinkedIn
+            </Button>
+            <Button
+              variant="contained"
+              startIcon={<ArticleIcon />}
+              download="Cristian_Castano_Cv.pdf"
+              href={cvLink}
+              sx={{
+                marginLeft: "10px",
+                color: "white",
+                "@media (max-width:600px)": {
+                  fontSize: "0.5rem",
+                  width: "80px",
+                  height: "30px",
+                },
+              }}
+            >
+              CV
+            </Button>
+          </Box>
         </div>
       </Container>
     </Paper>

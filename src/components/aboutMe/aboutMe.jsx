@@ -192,13 +192,3 @@ function AboutMe() {
 
 export default AboutMe;
 
-/*    id="icons"
-                      style={{
-                        backgroundImage: `url(${icon.icon})`,
-                        width: "100%",
-                        height: "100%",
-                        margin: "20px",
-                        backgroundSize: "contain",
-                        backgroundRepeat: "norepeat",
-                        backgroundPosition: "center",
-                      }} */
