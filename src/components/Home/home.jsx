@@ -93,7 +93,7 @@ function Home() {
                 marginTop: "-55px",
                 "@media (max-width:600px)": {
                   fontSize: "0.6rem",
-                  marginLeft: "25px",
+                  marginLeft: "0px",
                   marginTop: "20px",
                   marginBottom: "30px",
                   width: "75px",
@@ -104,14 +104,14 @@ function Home() {
               {copied ? "Copiado" : "Copiar"}
             </Button>
           </Box>
-          <Box
+          <Box // Contain of the button´s group
             sx={{
               "& button": { m: 1 },
               marginTop: "20px",
-              marginLeft: "33%",
+              marginLeft: "370px",
               "@media (max-width:600px)": {
                 marginTop: "-10px",
-                marginLeft: "10%",
+                marginLeft: "20px",
               },
             }}
           >
