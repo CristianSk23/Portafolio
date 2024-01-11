@@ -67,8 +67,8 @@ function AboutMe() {
   return (
     <Paper elevation={4}>
       <Container>
-        <Box sx={{ height: "1080px", paddingTop: "60px", }}>
-          <div id="contenInfo" >
+        <Box sx={{ height: "1080px", paddingTop: "60px" }}>
+          <div id="contenInfo">
             <div id="iconAvatar">
               <Avatar
                 alt="Cristian Castaño"
@@ -82,21 +82,22 @@ function AboutMe() {
                     height: 100,
                     marginTop: "0px",
                     marginBottom: "10px",
-                    marginLeft: "110px"
+                    marginLeft: "110px",
                   },
                 }}
               />
             </div>
             <Typography
-              variant="h5"
+              variant="body1"
               sx={{
                 flexGrow: 1,
-                width: "786px",
+                width: "850px",
                 height: "311px",
-                fontSize: "1.5rem",
+                fontSize: "1.8rem",
                 textAlign: "center",
                 marginLeft: "400px",
-                marginTop: "-160px",
+                marginTop: "-220px",
+                marginBottom: "30px",
                 "@media (max-width:600px)": {
                   fontSize: "1.5rem",
                   paddingTop: "10px",
@@ -110,20 +111,20 @@ function AboutMe() {
             >
               Un amante de la programación con un año de experiencia en el
               desarrollo de videojuegos y ahora sumergido en el mundo del
-              desarrollo web. Estoy en pleno curso de aprender más sobre el
+              desarrollo web.Estoy en pleno curso de aprender más sobre el
               mágico universo del desarrollo de software.
             </Typography>
           </div>
           <div id="contenSkills">
             <Typography
-              variant="h3"
+              variant="subtitle2"
               sx={{
                 flexGrow: 1,
                 fontSize: "2.5rem",
                 textAlign: "center",
-                marginTop: "-150px",
-                marginLeft: "230px",
-                marginBottom: "20px",
+                marginTop: "-110px",
+                marginLeft: "450px",
+                marginBottom: "40px",
                 "@media (max-width:600px)": {
                   marginLeft: "-20px",
                   marginTop: "10px",
@@ -137,7 +138,7 @@ function AboutMe() {
             <Box
               sx={{
                 width: "100%",
-                marginLeft: "200px",
+                marginLeft: "300px",
                 "@media (max-width:600px)": {
                   marginLeft: "20px",
                 },
@@ -145,7 +146,7 @@ function AboutMe() {
             >
               <Grid
                 container
-                rowSpacing={1}
+                rowSpacing={2}
                 columnSpacing={{ xs: 1, sm: 1, md: 2, lg: 1 }}
               >
                 {iconsData.map((icon, index) => (
@@ -161,19 +162,21 @@ function AboutMe() {
                           "@media (max-width:600px)": {
                             width: 50,
                             height: 50,
-                            marginTop: "10px",
+                            marginTop: "2px",
                           },
                         }}
                       />
                     </div>
                     <div id="designText">
                       <Typography
-                        variant="h5"
+                        variant="inherit"
                         sx={{
                           flexGrow: 1,
                           fontSize: "1.6rem",
                           textAlign: "center",
                           marginTop: "10px",
+                          width: "80px",
+                          height: "30px",
                           "@media (max-width:600px)": {
                             width: "50px",
                             height: "30px",

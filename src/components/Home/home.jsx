@@ -50,10 +50,10 @@ function Home() {
                 marginTop: "300px",
                 "@media (max-width:600px)": {
                   height: "100px",
-                  width: "100%",
+                  width: "350px",
                   fontSize: "1.6rem",
                   marginTop: "300px",
-                  marginLeft: "0px",
+                  marginLeft: "-35px",
                 },
               }}
             >
@@ -68,14 +68,15 @@ function Home() {
               "@media (max-width:600px)": {
                 marginLeft: "0px",
                 textAlign: "center",
-                marginTop: "20px",
+                marginTop: "0px",
               },
             }}
           >
             {" "}
             <Typography
-              variant="h5"
+              variant="subtitle2"
               sx={{
+                fontSize: "1.4rem",
                 "@media (max-width:600px)": {
                   fontSize: "1rem",
                   marginBottom: "20px",
