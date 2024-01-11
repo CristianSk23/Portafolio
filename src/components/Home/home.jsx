@@ -68,7 +68,7 @@ function Home() {
               "@media (max-width:600px)": {
                 marginLeft: "0px",
                 textAlign: "center",
-                marginTop: "-10px",
+                marginTop: "20px",
               },
             }}
           >
@@ -78,6 +78,7 @@ function Home() {
               sx={{
                 "@media (max-width:600px)": {
                   fontSize: "1rem",
+                  marginBottom: "20px",
                 },
               }}
             >
@@ -91,7 +92,7 @@ function Home() {
                 color: "white",
                 marginLeft: "320px",
                 marginTop: "-55px",
-                "@media (max-width:600px)": {
+                "@media (max-width:800px)": {
                   fontSize: "0.6rem",
                   marginLeft: "0px",
                   marginTop: "20px",
@@ -111,7 +112,7 @@ function Home() {
               marginLeft: "370px",
               "@media (max-width:600px)": {
                 marginTop: "-10px",
-                marginLeft: "20px",
+                marginLeft: "-4px",
               },
             }}
           >
