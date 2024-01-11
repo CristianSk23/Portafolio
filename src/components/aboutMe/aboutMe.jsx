@@ -20,6 +20,14 @@ import perfilAi from "../Design/perfilAi.jpg";
 function AboutMe() {
   const iconsData = [
     {
+      icon: htmlIcon,
+      label: "Html",
+    },
+    {
+      icon: cssIcon,
+      label: "Css",
+    },
+    {
       icon: jsIcon,
       label: "JavaScript",
     },
@@ -36,24 +44,16 @@ function AboutMe() {
       label: "Redux.Js",
     },
     {
-      icon: cssIcon,
-      label: "Css",
-    },
-    {
-      icon: htmlIcon,
-      label: "Html",
-    },
-    {
       icon: materialIcon,
       label: "MaterialUi",
     },
     {
-      icon: csharpIcon,
-      label: "C#",
-    },
-    {
       icon: bootstrapIcon,
       label: "Bootstrap",
+    },
+    {
+      icon: csharpIcon,
+      label: "C#",
     },
     {
       icon: unityIcon,
@@ -67,49 +67,53 @@ function AboutMe() {
   return (
     <Paper elevation={4}>
       <Container>
-        <div className="contenHome">
-          <Avatar
-            alt="Cristian Castaño"
-            src={perfilAi}
-            sx={{
-              width: 250,
-              height: 250,
-              marginTop: "60px",
-              "@media (max-width:600px)": {
-                width: 125,
-                height: 125,
-                marginTop: "0px",
-                marginBottom: "10px",
-              },
-            }}
-          />
-          <Typography
-            variant="h5"
-            sx={{
-              flexGrow: 1,
-              width: "786px",
-              height: "311px",
-              fontSize: "1.5rem",
-              textAlign: "center",
-              marginLeft: "280px",
-              marginTop: "-200px",
-              "@media (max-width:600px)": {
+        <Box sx={{ height: "1080px", paddingTop: "60px", }}>
+          <div id="contenInfo" >
+            <div id="iconAvatar">
+              <Avatar
+                alt="Cristian Castaño"
+                src={perfilAi}
+                sx={{
+                  width: 250,
+                  height: 250,
+                  marginTop: "60px",
+                  "@media (max-width:600px)": {
+                    width: 100,
+                    height: 100,
+                    marginTop: "0px",
+                    marginBottom: "10px",
+                    marginLeft: "110px"
+                  },
+                }}
+              />
+            </div>
+            <Typography
+              variant="h5"
+              sx={{
+                flexGrow: 1,
+                width: "786px",
+                height: "311px",
                 fontSize: "1.5rem",
-                paddingTop: "10px",
-                paddingBottom: "5px",
-                marginTop: "0px",
-                marginLeft: "5px",
-                width: "auto",
-                height: "300px",
-              },
-            }}
-          >
-            Un amante de la programación con un año de experiencia en el
-            desarrollo de videojuegos y ahora sumergido en el mundo del
-            desarrollo web. Estoy en pleno curso de aprender más sobre el mágico
-            universo del desarrollo de software.
-          </Typography>
-
+                textAlign: "center",
+                marginLeft: "400px",
+                marginTop: "-160px",
+                "@media (max-width:600px)": {
+                  fontSize: "1.5rem",
+                  paddingTop: "10px",
+                  paddingBottom: "5px",
+                  marginTop: "0px",
+                  marginLeft: "10px",
+                  width: "300px",
+                  height: "350px",
+                },
+              }}
+            >
+              Un amante de la programación con un año de experiencia en el
+              desarrollo de videojuegos y ahora sumergido en el mundo del
+              desarrollo web. Estoy en pleno curso de aprender más sobre el
+              mágico universo del desarrollo de software.
+            </Typography>
+          </div>
           <div id="contenSkills">
             <Typography
               variant="h3"
@@ -121,7 +125,7 @@ function AboutMe() {
                 marginLeft: "230px",
                 marginBottom: "20px",
                 "@media (max-width:600px)": {
-                  marginLeft: "0px",
+                  marginLeft: "-20px",
                   marginTop: "10px",
                 },
               }}
@@ -135,7 +139,7 @@ function AboutMe() {
                 width: "100%",
                 marginLeft: "200px",
                 "@media (max-width:600px)": {
-                  marginLeft: "0px",
+                  marginLeft: "20px",
                 },
               }}
             >
@@ -168,11 +172,13 @@ function AboutMe() {
                         sx={{
                           flexGrow: 1,
                           fontSize: "1.6rem",
-                          textAlign: "initial",
+                          textAlign: "center",
                           marginTop: "10px",
                           "@media (max-width:600px)": {
+                            width: "50px",
+                            height: "30px",
                             fontSize: "1rem",
-                            paddingLeft: "0px",
+                            textAlign: "center",
                           },
                         }}
                       >
@@ -184,11 +190,10 @@ function AboutMe() {
               </Grid>
             </Box>
           </div>
-        </div>
+        </Box>
       </Container>
     </Paper>
   );
 }
 
 export default AboutMe;
-
