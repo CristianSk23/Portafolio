@@ -24,6 +24,9 @@ const Jobs = () => {
             marginTop: "30px",
             paddingTop: "60px",
             borderWidth: "60px ",
+            "@media (max-width:600px)": {
+              height: "1450px",
+            },
           }}
         >
           <Box>
@@ -42,28 +45,55 @@ const Jobs = () => {
           </Box>
           <Grid
             container
-            rowSpacing={2}
-            columnSpacing={{ xs: 1, sm: 1, md: 6, lg: 5 }}
+            rowSpacing={5}
+            columnSpacing={{ xs: 2, sm: 1, md: 2, lg: 5 }}
           >
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Card
                 sx={{
                   maxWidth: 345,
                   marginTop: "60px",
                   width: "310px",
                   height: "387px",
+                  "@media (max-width:600px)": {
+                    width: "330px",
+                    height: "330px",
+                    marginTop: "30px",
+                  },
                 }}
               >
                 <CardMedia
-                  sx={{ height: 203 }}
+                  sx={{
+                    height: 203,
+                    "@media (max-width:600px)": {
+                      height: 150,
+                    },
+                  }}
                   image={imageTech}
                   title="TechNook"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    sx={{
+                      "@media (max-width:600px)": {
+                        fontSize: "1.2rem",
+                      },
+                    }}
+                  >
                     TechNook
                   </Typography>
-                  <Typography variant="body2" color="text.primary">
+                  <Typography
+                    variant="body2"
+                    color="text.primary"
+                    sx={{
+                      "@media (max-width:600px)": {
+                        fontSize: "0.8rem",
+                      },
+                    }}
+                  >
                     TechNook, una plataforma E-Commerce cuidadosamente creada
                     por un equipo de 8 desarrolladores.
                   </Typography>
@@ -74,25 +104,53 @@ const Jobs = () => {
               </Card>
             </Grid>
             {/* Card Sobre TechNook */}
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Card
                 sx={{
                   maxWidth: 345,
                   marginTop: "60px",
                   width: "310px",
                   height: "387px",
+                  "@media (max-width:600px)": {
+                    width: "330px",
+                    height: "300px",
+                    marginTop: "0px",
+                    height: "330px",
+                  },
                 }}
               >
                 <CardMedia
-                  sx={{ height: 203 }}
+                  sx={{
+                    height: 203,
+                    "@media (max-width:600px)": {
+                      height: 150,
+                    },
+                  }}
                   image={imageTech}
                   title="TechNook"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    sx={{
+                      "@media (max-width:600px)": {
+                        fontSize: "1.2rem",
+                      },
+                    }}
+                  >
                     Web sobre Videojuegos
                   </Typography>
-                  <Typography variant="body2" color="text.primary">
+                  <Typography
+                    variant="body2"
+                    color="text.primary"
+                    sx={{
+                      "@media (max-width:600px)": {
+                        fontSize: "0.8rem",
+                      },
+                    }}
+                  >
                     Aplicación web para amantes de videojuegos, permite explorar
                     y gestionar información de juegos mediante integración con
                     la API de Rawg.io.
@@ -103,25 +161,53 @@ const Jobs = () => {
                 </CardActions>
               </Card>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={12} sm={6} md={4}>
               <Card
                 sx={{
                   maxWidth: 345,
                   marginTop: "60px",
                   width: "310px",
                   height: "387px",
+                  "@media (max-width:600px)": {
+                    width: "330px",
+                    height: "300px",
+                    marginTop: "0px",
+                    height: "330px",
+                  },
                 }}
               >
                 <CardMedia
-                  sx={{ height: 203 }}
+                  sx={{
+                    height: 203,
+                    "@media (max-width:600px)": {
+                      height: 150,
+                    },
+                  }}
                   image={imageTech}
                   title="TechNook"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    sx={{
+                      "@media (max-width:600px)": {
+                        fontSize: "1.2rem",
+                      },
+                    }}
+                  >
                     Web sobre Videojuegos
                   </Typography>
-                  <Typography variant="body2" color="text.primary">
+                  <Typography
+                    variant="body2"
+                    color="text.primary"
+                    sx={{
+                      "@media (max-width:600px)": {
+                        fontSize: "0.8rem",
+                      },
+                    }}
+                  >
                     Aplicación web para amantes de videojuegos, permite explorar
                     y gestionar información de juegos mediante integración con
                     la API de Rawg.io.
