@@ -12,19 +12,22 @@ import {
   Button,
   Grid,
 } from "@mui/material";
+// Import of images for the card
+//* Images the TechNook web
 import imageTech1 from "../Design/Tech/ft1.jpg";
 import imageTech2 from "../Design/Tech/ft2.jpg";
 import imageTech3 from "../Design/Tech/ft3.jpg";
-
+//* Images the web of videogames
 import imageVg1 from "../Design/Tech/ft4VG.jpg";
 import imageVg2 from "../Design/Tech/ft5VG.jpg";
 import imageVg3 from "../Design/Tech/ft6VG.jpg";
-
+//* Game developer Images
 import imageGD1 from "../Design/Tech/ft7GD.jpg";
 import imageGD2 from "../Design/Tech/ft9GD.jpg";
 import imageGD3 from "../Design/Tech/ft10GD.jpg";
 
-//import imageVg from "../Design/Tech/ft4VG.jpg";
+import InfoJobs from "../InfoJobs/infoJobs";
+import { Link } from "react-router-dom";
 
 const Jobs = () => {
   const infoJobs = [
@@ -151,7 +154,9 @@ const Jobs = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">Mas info</Button>
+                    <Link to="/info">
+                      <Button size="small">Mas info</Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>

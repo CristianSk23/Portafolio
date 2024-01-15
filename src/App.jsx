@@ -11,6 +11,8 @@ import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact
 
 import Contact from "./components/contactMe/contact";
 import "./StylesA.css";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+
 function App() {
   const navArrayLinks = [
     {
@@ -30,22 +32,38 @@ function App() {
     },
   ];
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
+  const hideDivs = location.pathname === "/info";
+
   return (
     <>
-      <NavBar navArrayLinks={navArrayLinks} />
+      <NavBar navArrayLinks={navArrayLinks} onNavigate={handleNavigation} />
+      {!hideDivs && (
+        <>
+          <div id="/">
+            <Home />
+          </div>
+          <div id="SobreMi">
+            <About />
+          </div>
+          <div id="Portafolio">
+            <Jobs />
+          </div>
+          <div id="Contactame">
+            <Contact />
+          </div>
+        </>
+      )}
 
-      <div id="/">
-        <Home />
-      </div>
-      <div id="SobreMi">
-        <About />
-      </div>
-      <div id="Portafolio">
-        <Jobs />
-      </div>
-      <div id="Contactame">
-        <Contact />
-      </div>
+      <Routes>
+        <Route path="/info" element={<InfoJobs />} />
+      </Routes>
     </>
   );
 }
