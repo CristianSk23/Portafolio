@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 import {
   Box,
@@ -12,9 +12,56 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-import imageTech from "../Design/Tech/ft1.jpg";
+import imageTech1 from "../Design/Tech/ft1.jpg";
+import imageTech2 from "../Design/Tech/ft2.jpg";
+import imageTech3 from "../Design/Tech/ft3.jpg";
+
+import imageVg1 from "../Design/Tech/ft4VG.jpg";
+import imageVg2 from "../Design/Tech/ft5VG.jpg";
+import imageVg3 from "../Design/Tech/ft6VG.jpg";
+
+import imageGD1 from "../Design/Tech/ft7GD.jpg";
+import imageGD2 from "../Design/Tech/ft9GD.jpg";
+import imageGD3 from "../Design/Tech/ft10GD.jpg";
+
+//import imageVg from "../Design/Tech/ft4VG.jpg";
 
 const Jobs = () => {
+  const infoJobs = [
+    {
+      title: "TechNook",
+      label:
+        "TechNook, una plataforma E-Commerce cuidadosamente creada por un equipo de 8 desarrolladores.",
+      image: [imageTech1, imageTech2, imageTech3],
+    },
+    {
+      title: "Web sobre Videojuegos",
+      label:
+        " Aplicación web para amantes de videojuegos, permite explorar y gestionar información de juegos",
+      image: [imageVg1, imageVg2, imageVg3],
+    },
+    {
+      title: "Desarrollo de Videojuegos",
+      label: "Galeria de Proyectos como desarrollador de Videojuegos.",
+      image: [imageGD1, imageGD2, imageGD3],
+    },
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const showNextImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex + 1) % infoJobs[currentImageIndex].image.length
+    );
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(showNextImage, 10000); // Cambiar cada 5 segundos
+
+    // Limpiar el intervalo al desmontar el componente
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <Paper>
       <Container elevation={4}>
@@ -47,179 +94,69 @@ const Jobs = () => {
             container
             rowSpacing={5}
             columnSpacing={{ xs: 2, sm: 1, md: 2, lg: 5 }}
+            sx={{ marginTop: "60px" }}
           >
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                sx={{
-                  maxWidth: 345,
-                  marginTop: "60px",
-                  width: "310px",
-                  height: "387px",
-                  "@media (max-width:600px)": {
-                    width: "330px",
-                    height: "330px",
-                    marginTop: "30px",
-                  },
-                }}
-              >
-                <CardMedia
+            {infoJobs.map((info, index) => (
+              <Grid key={index} item xs={12} sm={6} md={4}>
+                <Card
                   sx={{
-                    height: 203,
+                    maxWidth: 345,
+                    marginTop: "60px",
+                    width: "310px",
+                    height: "387px",
                     "@media (max-width:600px)": {
-                      height: 150,
+                      width: "330px",
+                      height: "330px",
+                      marginTop: "30px",
                     },
                   }}
-                  image={imageTech}
-                  title="TechNook"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
+                >
+                  <CardMedia
                     sx={{
+                      height: 203,
+                      objectFit: "contain",
                       "@media (max-width:600px)": {
-                        fontSize: "1.2rem",
+                        height: 150,
                       },
                     }}
-                  >
-                    TechNook
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.primary"
-                    sx={{
-                      "@media (max-width:600px)": {
-                        fontSize: "0.8rem",
-                      },
-                    }}
-                  >
-                    TechNook, una plataforma E-Commerce cuidadosamente creada
-                    por un equipo de 8 desarrolladores.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">Mas info</Button>
-                </CardActions>
-              </Card>
-            </Grid>
-            {/* Card Sobre TechNook */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                sx={{
-                  maxWidth: 345,
-                  marginTop: "60px",
-                  width: "310px",
-                  height: "387px",
-                  "@media (max-width:600px)": {
-                    width: "330px",
-                    height: "300px",
-                    marginTop: "0px",
-                    height: "330px",
-                  },
-                }}
-              >
-                <CardMedia
-                  sx={{
-                    height: 203,
-                    "@media (max-width:600px)": {
-                      height: 150,
-                    },
-                  }}
-                  image={imageTech}
-                  title="TechNook"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    sx={{
-                      "@media (max-width:600px)": {
-                        fontSize: "1.2rem",
-                      },
-                    }}
-                  >
-                    Web sobre Videojuegos
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.primary"
-                    sx={{
-                      "@media (max-width:600px)": {
-                        fontSize: "0.8rem",
-                      },
-                    }}
-                  >
-                    Aplicación web para amantes de videojuegos, permite explorar
-                    y gestionar información de juegos mediante integración con
-                    la API de Rawg.io.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">Mas info</Button>
-                </CardActions>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                sx={{
-                  maxWidth: 345,
-                  marginTop: "60px",
-                  width: "310px",
-                  height: "387px",
-                  "@media (max-width:600px)": {
-                    width: "330px",
-                    height: "300px",
-                    marginTop: "0px",
-                    height: "330px",
-                  },
-                }}
-              >
-                <CardMedia
-                  sx={{
-                    height: 203,
-                    "@media (max-width:600px)": {
-                      height: 150,
-                    },
-                  }}
-                  image={imageTech}
-                  title="TechNook"
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    sx={{
-                      "@media (max-width:600px)": {
-                        fontSize: "1.2rem",
-                      },
-                    }}
-                  >
-                    Web sobre Videojuegos
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.primary"
-                    sx={{
-                      "@media (max-width:600px)": {
-                        fontSize: "0.8rem",
-                      },
-                    }}
-                  >
-                    Aplicación web para amantes de videojuegos, permite explorar
-                    y gestionar información de juegos mediante integración con
-                    la API de Rawg.io.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">Mas info</Button>
-                </CardActions>
-              </Card>
-            </Grid>
+                    image={info.image[currentImageIndex]}
+                    title="info"
+                  />
+
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      sx={{
+                        fontSize: "1.4rem",
+                        "@media (max-width:600px)": {
+                          fontSize: "1.2rem",
+                        },
+                      }}
+                    >
+                      {info.title}
+                    </Typography>
+                    {/* information the card */}
+                    <Typography
+                      variant="body2"
+                      color="text.primary"
+                      sx={{
+                        "@media (max-width:600px)": {
+                          fontSize: "0.8rem",
+                        },
+                      }}
+                    >
+                      {info.label}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small">Mas info</Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
-          {/* Card Sobre TechNook */}
         </Box>
       </Container>
     </Paper>
@@ -227,3 +164,5 @@ const Jobs = () => {
 };
 
 export default Jobs;
+
+/* mediante integración con la API de Rawg.io. */

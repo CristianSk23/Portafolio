@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar/navBar";
 import Home from "./components/Home/home";
 import Jobs from "./components/Jobs/jobs";
 import About from "./components/aboutMe/aboutMe";
+import InfoJobs from "./components/InfoJobs/infoJobs";
 
 import InfoIcon from "@mui/icons-material/Info";
 import WorkIcon from "@mui/icons-material/Work";
