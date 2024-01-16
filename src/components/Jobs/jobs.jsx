@@ -12,44 +12,11 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-// Import of images for the card
-//* Images the TechNook web
-import imageTech1 from "../Design/Tech/ft1.jpg";
-import imageTech2 from "../Design/Tech/ft2.jpg";
-import imageTech3 from "../Design/Tech/ft3.jpg";
-//* Images the web of videogames
-import imageVg1 from "../Design/Tech/ft4VG.jpg";
-import imageVg2 from "../Design/Tech/ft5VG.jpg";
-import imageVg3 from "../Design/Tech/ft6VG.jpg";
-//* Game developer Images
-import imageGD1 from "../Design/Tech/ft7GD.jpg";
-import imageGD2 from "../Design/Tech/ft9GD.jpg";
-import imageGD3 from "../Design/Tech/ft10GD.jpg";
 
 import InfoJobs from "../InfoJobs/infoJobs";
 import { Link } from "react-router-dom";
 
-const Jobs = () => {
-  const infoJobs = [
-    {
-      title: "TechNook",
-      label:
-        "TechNook, una plataforma E-Commerce cuidadosamente creada por un equipo de 8 desarrolladores.",
-      image: [imageTech1, imageTech2, imageTech3],
-    },
-    {
-      title: "Web sobre Videojuegos",
-      label:
-        " Aplicación web para amantes de videojuegos, permite explorar y gestionar información de juegos",
-      image: [imageVg1, imageVg2, imageVg3],
-    },
-    {
-      title: "Desarrollo de Videojuegos",
-      label: "Galeria de Proyectos como desarrollador de Videojuegos.",
-      image: [imageGD1, imageGD2, imageGD3],
-    },
-  ];
-
+const Jobs = ({ infoJobs }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const showNextImage = () => {
@@ -59,11 +26,11 @@ const Jobs = () => {
   };
 
   useEffect(() => {
-    const intervalId = setInterval(showNextImage, 10000); // Cambiar cada 5 segundos
+    const intervalId = setInterval(showNextImage, 10000); // change of 10 seconds
 
     // Limpiar el intervalo al desmontar el componente
     return () => clearInterval(intervalId);
-  }, []);
+  }, [currentImageIndex]);
 
   return (
     <Paper>
@@ -154,7 +121,7 @@ const Jobs = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Link to="/info">
+                    <Link to={`/info/${index}`}>
                       <Button size="small">Mas info</Button>
                     </Link>
                   </CardActions>

@@ -31,7 +31,6 @@ function Home() {
       setIconChange(true);
       setTimeout(() => {
         setCopied(false), setIconChange(false);
-        console.log("iconChange" + icon);
       }, 5000);
     });
   };
@@ -58,7 +57,7 @@ function Home() {
               }}
             >
               ¡HOLA! Soy Cristian Castaño <br></br>{" "}
-              <strong>Desarrollador FullStack</strong>
+              <strong>Desarrollador Web</strong>
             </Typography>
           </div>
           <Box

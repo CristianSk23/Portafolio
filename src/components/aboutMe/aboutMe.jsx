@@ -91,28 +91,32 @@ function AboutMe() {
               variant="body1"
               sx={{
                 flexGrow: 1,
-                width: "850px",
+                width: "950px",
                 height: "311px",
                 fontSize: "1.8rem",
                 textAlign: "center",
                 marginLeft: "400px",
-                marginTop: "-220px",
-                marginBottom: "30px",
+                marginTop: "-250px",
+                marginBottom: "90px",
                 "@media (max-width:600px)": {
-                  fontSize: "1.5rem",
+                  fontSize: "1.1rem",
                   paddingTop: "10px",
                   paddingBottom: "5px",
                   marginTop: "0px",
                   marginLeft: "10px",
+                  marginBottom: "0px",
                   width: "300px",
                   height: "350px",
                 },
               }}
             >
-              Un amante de la programación con un año de experiencia en el
-              desarrollo de videojuegos y ahora sumergido en el mundo del
-              desarrollo web.Estoy en pleno curso de aprender más sobre el
-              mágico universo del desarrollo de software.
+              Apasionado desarrollador con un año de experiencia en el
+              fascinante mundo de los videojuegos y una inmersión actual en el
+              emocionante campo del desarrollo web. Siempre en busca de desafíos
+              que impulsen el crecimiento profesional. Actualmente aprendiendo
+              sobre el desarrollo de software, ansioso por
+              contribuir a proyectos innovadores y aprender continuamente en
+              esta apasionante travesía tecnológica.
             </Typography>
           </div>
           <div id="contenSkills">
