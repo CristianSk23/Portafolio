@@ -17,6 +17,8 @@ import githubIcon from "../Design/icons/github.png";
 import perfil from "../Design/Perfil.jpg";
 import perfilAi from "../Design/perfilAi.jpg";
 
+import wllpaper from "../Design/wllpaper4.jpg";
+
 function AboutMe() {
   const iconsData = [
     {
@@ -65,9 +67,22 @@ function AboutMe() {
     },
   ];
   return (
-    <Paper elevation={4}>
+    <Paper
+      elevation={4}
+      sx={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${wllpaper})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Container>
-        <Box sx={{ height: "1080px", paddingTop: "60px" }}>
+        <Box
+          sx={{
+            height: "1080px",
+            paddingTop: "60px",
+          }}
+        >
           <div id="contenInfo">
             <div id="iconAvatar">
               <Avatar
@@ -114,9 +129,9 @@ function AboutMe() {
               fascinante mundo de los videojuegos y una inmersión actual en el
               emocionante campo del desarrollo web. Siempre en busca de desafíos
               que impulsen el crecimiento profesional. Actualmente aprendiendo
-              sobre el desarrollo de software, ansioso por
-              contribuir a proyectos innovadores y aprender continuamente en
-              esta apasionante travesía tecnológica.
+              sobre el desarrollo de software, ansioso por contribuir a
+              proyectos innovadores y aprender continuamente en esta apasionante
+              travesía tecnológica.
             </Typography>
           </div>
           <div id="contenSkills">

@@ -81,6 +81,7 @@ function Home() {
                 "@media (max-width:600px)": {
                   fontSize: "1rem",
                   marginBottom: "20px",
+                  marginLeft: "0px",
                 },
               }}
             >

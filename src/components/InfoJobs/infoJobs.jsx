@@ -9,6 +9,9 @@ import {
 import React from "react";
 import { useParams } from "react-router-dom";
 import videoTechNook from "../Design/JobsVid/PanelAdministrativo.mp4";
+import videoWebVideogames from "../Design/JobsVid/paginaDeInicio.mp4";
+
+import wllpaper from "../Design/wllpaper3.jpg";
 
 const InfoJobs = () => {
   const { id } = useParams();
@@ -26,7 +29,7 @@ const InfoJobs = () => {
       title: "Web sobre Videojuegos",
       label:
         "Aplicación web orientada a los amantes de los videojuegos, que permite explorar y gestionar información de videojuegos mediante la integración con la API de Rawg.io. La plataforma brinda a los usuarios la capacidad de buscar videojuegos, filtrar resultados, ver detalles y crear tarjetas personalizadas con información de sus juegos favoritos.",
-      /*  image: [imageVg1, imageVg2, imageVg3], */
+      video: videoWebVideogames,
     },
     {
       id: 2,
@@ -38,7 +41,14 @@ const InfoJobs = () => {
   ];
 
   return (
-    <Paper>
+    <Paper
+      sx={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${wllpaper})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Container
         sx={{
           height: "1200px",

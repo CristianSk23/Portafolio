@@ -13,8 +13,9 @@ import {
   Grid,
 } from "@mui/material";
 
-import InfoJobs from "../InfoJobs/infoJobs";
 import { Link } from "react-router-dom";
+
+import wllpaper from "../Design/wllpaper3.jpg";
 
 const Jobs = ({ infoJobs }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -33,7 +34,14 @@ const Jobs = ({ infoJobs }) => {
   }, [currentImageIndex]);
 
   return (
-    <Paper>
+    <Paper
+      sx={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${wllpaper})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Container elevation={4}>
         <Box
           sx={{

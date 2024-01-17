@@ -28,7 +28,13 @@ const NavBar = ({ navArrayLinks }) => {
           >
             <MenuIcon size="large" />
           </IconButton>
-          <Typography variant="h6" sx={{ flexGrow: 1 }} color="inherit">
+          <Typography
+            variant="h6"
+            sx={{ flexGrow: 1 }}
+            color="inherit"
+            component="a"
+            href="#home"
+          >
             <HomeIcon />
             Castaño
           </Typography>
