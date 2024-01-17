@@ -111,7 +111,7 @@ function Home() {
             sx={{
               "& button": { m: 1 },
               marginTop: "20px",
-              marginLeft: "795px",
+              marginLeft: "785px",
               "@media (max-width:600px)": {
                 marginTop: "-10px",
                 marginLeft: "40px",
