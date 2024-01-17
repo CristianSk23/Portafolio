@@ -11,6 +11,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import cvLink from "./cvPdf/Cristian_Castano_Cv.pdf";
 
 const email = "cristian200127@gmail.com";
+import background from "../Design/wllpaper3.jpg";
 
 function Home() {
   const [copied, setCopied] = useState(false);
@@ -51,8 +52,8 @@ function Home() {
                   height: "100px",
                   width: "350px",
                   fontSize: "1.6rem",
-                  marginTop: "300px",
-                  marginLeft: "-35px",
+                  marginTop: "150px",
+                  marginLeft: "5px",
                 },
               }}
             >
@@ -76,6 +77,7 @@ function Home() {
               variant="subtitle2"
               sx={{
                 fontSize: "1.4rem",
+                marginLeft: "70px",
                 "@media (max-width:600px)": {
                   fontSize: "1rem",
                   marginBottom: "20px",
@@ -90,7 +92,7 @@ function Home() {
               startIcon={iconChange ? <CheckIcon /> : <ContentCopyIcon />}
               sx={{
                 color: "white",
-                marginLeft: "320px",
+                marginLeft: "380px",
                 marginTop: "-55px",
                 "@media (max-width:800px)": {
                   fontSize: "0.6rem",
@@ -109,10 +111,10 @@ function Home() {
             sx={{
               "& button": { m: 1 },
               marginTop: "20px",
-              marginLeft: "370px",
+              marginLeft: "795px",
               "@media (max-width:600px)": {
                 marginTop: "-10px",
-                marginLeft: "-4px",
+                marginLeft: "40px",
               },
             }}
           >

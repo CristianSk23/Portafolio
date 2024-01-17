@@ -1,4 +1,11 @@
-import { Box, Button, Container, Paper, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Drawer,
+  Paper,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
 import videoTechNook from "../Design/JobsVid/PanelAdministrativo.mp4";
@@ -102,7 +109,7 @@ const InfoJobs = () => {
               },
             }}
           >
-            <Button variant="contained" >Web</Button>
+            <Button variant="contained">Web</Button>
             <video width="100%" height="auto" controls>
               <source src={info[id].video} type="video/mp4" />
             </video>

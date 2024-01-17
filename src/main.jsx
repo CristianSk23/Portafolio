@@ -7,6 +7,8 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
+import drawerImage from "./components/Design/wllpaper3.jpg";
+
 /* import "./index.css"; */
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
@@ -21,8 +23,8 @@ const theme = createTheme({
       main: "#ffb74d",
     },
     background: {
-      default: "#000000",
-      paper: "#4c3f5d",
+      default: '#000000', 
+      paper: '#4c3f5d', 
     },
     text: {
       primary: "rgba(255,255,255,0.87)",

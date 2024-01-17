@@ -90,7 +90,7 @@ function App() {
           path="/"
           element={
             <>
-              <div id="/">
+              <div id="home">
                 <Home />
               </div>
               <div id="SobreMi">

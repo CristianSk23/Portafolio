@@ -1,7 +1,19 @@
 .contenHome {
   height: 1080px;
+  width: 1918px;
   margin: 25px;
+  margin-left: -390px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../Design//wllpaper3.jpg");
+  background-size: "cover";
+  background-position: "center";
+  background-repeat: "no-repeat";
 }
+
+/* .imgBck {
+  height: 1080px;
+  width: 1920px;
+} */
 
 :target::before {
   content: "";
@@ -13,7 +25,7 @@
 #contenTitle {
   padding-top: 50px;
 }
-#buttonGroupRds{
+#buttonGroupRds {
   width: 248px;
   height: 91px;
   display: flex;
@@ -29,13 +41,21 @@
     height: 50%;
     margin: 20px;
   }
-  #buttonGroupRds{
+  #buttonGroupRds {
     width: 60px;
     height: 72px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 38%;
+  }
+  .contenHome {
+    height: 700px;
+    width: 370px;
+    margin-left: -20px;
+    background-size: "cover";
+    background-position: "center";
+    background-repeat: "no-repeat";
   }
 }
 
@@ -46,5 +66,3 @@
 #icons img {
   display: none; /* Oculta la etiqueta de imagen si decides usar el fondo */
 }
-
-
