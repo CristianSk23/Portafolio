@@ -163,10 +163,9 @@ const InfoJobs = () => {
               width: "100%",
               height: "80px",
               marginTop: "230px",
-              marginLeft: "5px",
+              marginLeft: "0px",
               "@media (max-width:600px)": {
-                width: "100%",
-                height: "80px",
+                width: "310px",
                 marginTop: "260px",
                 marginLeft: "0px",
               },
@@ -184,14 +183,21 @@ const InfoJobs = () => {
                 container
                 rowSpacing={{ xs: 8, sm: 1, md: 2, lg: 15 }}
                 columnSpacing={{ xs: 1, sm: 1, md: 2, lg: 10 }}
-                sx={{
-                  "@media (max-width:600px)": {
-                    marginLeft: "15%",
-                  },
-                }}
               >
                 {info[id].video.map((video, index) => (
-                  <Grid key={index} item xs={8} sm={6} md={4} lg={4}>
+                  <Grid
+                    key={index}
+                    item
+                    xs={8}
+                    sm={6}
+                    md={4}
+                    lg={4}
+                    sx={{
+                      "@media (max-width:600px)": {
+                        marginLeft: "60px",
+                      },
+                    }}
+                  >
                     <video
                       key={index}
                       width="100%"
