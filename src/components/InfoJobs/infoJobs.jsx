@@ -88,7 +88,6 @@ const InfoJobs = () => {
   const handleClickOpen = (index) => {
     setOpen(true);
     setIndexText(index);
-    console.log();
   };
   const handleClose = () => {
     setOpen(false);
@@ -191,71 +190,62 @@ const InfoJobs = () => {
                   },
                 }}
               >
-                {info[id].video.map(
-                  (video, index) => (
-                    <Grid key={index} item xs={8} sm={6} md={4} lg={4}>
-                      <video
-                        key={index}
-                        width="100%"
-                        height="auto"
-                        controls
-                        autoPlay
-                        loop
-                      >
-                        <source src={video} type="video/mp4" />
-                      </video>
-                      <Button
-                        variant="contained"
-                        sx={{
-                          width: { xs: "25%", sm: "80%", md: "60%", lg: "30%" },
-                          marginLeft: "30%",
-                          marginTop: "5%",
-                        }}
-                        onClick={() => handleClickOpen(index)}
-                      >
-                        Info
-                      </Button>
-                    </Grid>
-                  ),
-                  <BootstrapDialog
-                    onClose={handleClose}
-                    aria-labelledby="customized-dialog-title"
-                    open={open}
-                  >
-                    <DialogTitle
-                      sx={{ m: 0, p: 2 }}
-                      id="customized-dialog-title"
+                {info[id].video.map((video, index) => (
+                  <Grid key={index} item xs={8} sm={6} md={4} lg={4}>
+                    <video
+                      key={index}
+                      width="100%"
+                      height="auto"
+                      controls
+                      autoPlay
+                      loop
                     >
-                      {info[id].titleDesc[indexText]}
-                    </DialogTitle>
-                    <IconButton
-                      aria-label="close"
-                      onClick={handleClose}
+                      <source src={video} type="video/mp4" />
+                    </video>
+                    <Button
+                      variant="contained"
                       sx={{
-                        position: "absolute",
-                        right: 8,
-                        top: 8,
-                        color: (theme) => theme.palette.grey[500],
+                        width: { xs: "25%", sm: "80%", md: "60%", lg: "30%" },
+                        marginLeft: "30%",
+                        marginTop: "5%",
                       }}
+                      onClick={() => handleClickOpen(index)}
                     >
-                      <CloseIcon />
-                    </IconButton>
-                    <DialogContent dividers>
-                      <Typography gutterBottom>
-                        {info[id].descriptionVg[indexText]}
-                      </Typography>
-                    </DialogContent>
-                    <DialogActions>
-                      <Button
-                        autoFocus
-                        onClick={handleClose}
-                        variant="contained"
-                      >
-                        Continuar
-                      </Button>
-                    </DialogActions>
-                  </BootstrapDialog>
-                )}
+                      Info
+                    </Button>
+                  </Grid>
+                ))}
+                <BootstrapDialog
+                  onClose={handleClose}
+                  aria-labelledby="customized-dialog-title"
+                  open={open}
+                >
+                  <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+                    {info[id].titleDesc[indexText]}
+                  </DialogTitle>
+                  <IconButton
+                    aria-label="close"
+                    onClick={handleClose}
+                    sx={{
+                      position: "absolute",
+                      right: 8,
+                      top: 8,
+                      color: (theme) => theme.palette.grey[500],
+                    }}
+                  >
+                    <CloseIcon />
+                  </IconButton>
+                  <DialogContent dividers>
+                    <Typography gutterBottom>
+                      {info[id].descriptionVg[indexText]}
+                    </Typography>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button autoFocus onClick={handleClose} variant="contained">
+                      Continuar
+                    </Button>
+                  </DialogActions>
+                </BootstrapDialog>
               </Grid>
             )}
           </Box>
