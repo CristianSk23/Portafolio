@@ -50,29 +50,40 @@ const Jobs = ({ infoJobs }) => {
             paddingTop: "60px",
             borderWidth: "60px ",
             "@media (max-width:600px)": {
-              height: "1450px",
+              height: "1560px",
             },
           }}
         >
           <Box>
             <Typography
               variant="subtitle2"
-              sx={{ textAlign: "center", fontSize: "2.5rem" }}
+              sx={{ textAlign: "center", fontSize: "3rem" }}
             >
               Portafolio
             </Typography>
             <Typography
               variant="body1"
-              sx={{ textAlign: "center", fontSize: "1.5rem" }}
+              sx={{
+                textAlign: "center",
+                fontSize: "1.7rem",
+                marginTop: "50px",
+                "@media (max-width:600px)": {
+                  fontSize: "1.2rem",
+                },
+              }}
             >
-              Info portafolio
+              Durante mi trayectoria en el mundo del desarrollo, he llevado a
+              cabo diversos proyectos web y de desarrollo de videojuegos,
+              consolidando un conjunto sólido de habilidades. Mi enfoque se
+              centra en la implementación de soluciones creativas y eficientes,
+              destacando la versatilidad para abordar desafíos técnicos.
             </Typography>
           </Box>
           <Grid
             container
             rowSpacing={5}
             columnSpacing={{ xs: 2, sm: 1, md: 2, lg: 5 }}
-            sx={{ marginTop: "60px" }}
+            sx={{ marginTop: "5px" }}
           >
             {infoJobs.map((info, index) => (
               <Grid key={index} item xs={12} sm={6} md={4}>
@@ -83,9 +94,9 @@ const Jobs = ({ infoJobs }) => {
                     width: "310px",
                     height: "387px",
                     "@media (max-width:600px)": {
-                      width: "330px",
-                      height: "330px",
-                      marginTop: "30px",
+                      width: "320px",
+                      height: "320px",
+                      marginTop: "1px",
                     },
                   }}
                 >
