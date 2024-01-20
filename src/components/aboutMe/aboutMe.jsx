@@ -17,7 +17,7 @@ import githubIcon from "../Design/icons/github.png";
 import perfil from "../Design/Perfil.jpg";
 import perfilAi from "../Design/perfilAi.jpg";
 
-import wllpaper from "../Design/wllpaper4.jpg";
+import wllpaper from "../Design/wllpaper3.jpg";
 
 function AboutMe() {
   const iconsData = [
@@ -106,9 +106,9 @@ function AboutMe() {
               variant="body1"
               sx={{
                 flexGrow: 1,
-                width: "950px",
+                width: "auto",
                 height: "311px",
-                fontSize: "1.8rem",
+                fontSize: "1.6rem",
                 textAlign: "center",
                 marginLeft: "400px",
                 marginTop: "-250px",
@@ -156,8 +156,8 @@ function AboutMe() {
           <div id="contenIcons">
             <Box
               sx={{
-                width: "100%",
-                marginLeft: "300px",
+                width: "auto",
+                marginLeft: "40%",
                 "@media (max-width:600px)": {
                   marginLeft: "20px",
                 },
@@ -165,8 +165,8 @@ function AboutMe() {
             >
               <Grid
                 container
-                rowSpacing={2}
-                columnSpacing={{ xs: 1, sm: 1, md: 2, lg: 1 }}
+                rowSpacing={5}
+                columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
               >
                 {iconsData.map((icon, index) => (
                   <Grid key={index} item xs={4} sm={6} md={4} lg={3}>

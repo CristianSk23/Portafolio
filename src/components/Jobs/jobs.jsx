@@ -15,7 +15,7 @@ import {
 
 import { Link } from "react-router-dom";
 
-import wllpaper from "../Design/wllpaper3.jpg";
+import wllpaper from "../Design/wllpaper4.jpg";
 
 const Jobs = ({ infoJobs }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
