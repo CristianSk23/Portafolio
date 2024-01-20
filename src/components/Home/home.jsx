@@ -11,7 +11,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import cvLink from "./cvPdf/Cristian_Castano_Cv.pdf";
 
 const email = "cristian200127@gmail.com";
-import background from "../Design/wllpaper3.jpg";
+import wllpaper from "../Design/wllpaper3.jpg";
 
 function Home() {
   const [copied, setCopied] = useState(false);
@@ -37,7 +37,15 @@ function Home() {
   };
 
   return (
-    <Paper elevation={4}>
+    <Paper
+      elevation={4}
+      sx={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${wllpaper})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Container>
         <div className="contenHome">
           <div id="contenTitle">
@@ -48,6 +56,7 @@ function Home() {
                 fontSize: "4rem",
                 textAlign: "center",
                 marginTop: "300px",
+                marginLeft: "30%",
                 "@media (max-width:600px)": {
                   height: "100px",
                   width: "350px",
@@ -77,7 +86,7 @@ function Home() {
               variant="subtitle2"
               sx={{
                 fontSize: "1.4rem",
-                marginLeft: "70px",
+                marginLeft: "25%",
                 "@media (max-width:600px)": {
                   fontSize: "1rem",
                   marginBottom: "20px",
@@ -93,7 +102,7 @@ function Home() {
               startIcon={iconChange ? <CheckIcon /> : <ContentCopyIcon />}
               sx={{
                 color: "white",
-                marginLeft: "380px",
+                marginLeft: "55%",
                 marginTop: "-55px",
                 "@media (max-width:800px)": {
                   fontSize: "0.6rem",
@@ -112,7 +121,7 @@ function Home() {
             sx={{
               "& button": { m: 1 },
               marginTop: "20px",
-              marginLeft: "785px",
+              marginLeft: "53%",
               "@media (max-width:600px)": {
                 marginTop: "-10px",
                 marginLeft: "40px",

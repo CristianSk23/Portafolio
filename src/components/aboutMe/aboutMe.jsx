@@ -120,7 +120,7 @@ function AboutMe() {
                   marginTop: "0px",
                   marginLeft: "10px",
                   marginBottom: "0px",
-                  width: "300px",
+                  width: "auto",
                   height: "350px",
                 },
               }}

@@ -1,19 +1,9 @@
 .contenHome {
   height: 1080px;
-  width: 1918px;
+  width: auto;
   margin: 25px;
   margin-left: -390px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../Design//wllpaper3.jpg");
-  background-size: "cover";
-  background-position: "center";
-  background-repeat: "no-repeat";
 }
-
-/* .imgBck {
-  height: 1080px;
-  width: 1920px;
-} */
 
 :target::before {
   content: "";
@@ -51,7 +41,7 @@
   }
   .contenHome {
     height: 700px;
-    width: 370px;
+    width: auto;
     margin-left: -20px;
     background-size: "cover";
     background-position: "center";
