@@ -41,6 +41,7 @@ const InfoJobs = () => {
         "TechNook, una plataforma E-Commerce cuidadosamente creada por un equipo de 8 desarrolladores, se presenta como un destino único para entusiastas de la tecnología. En mi rol como desarrollador backend, contribuí significativamente a la funcionalidad del sistema, centrándome en la gestión de productos, usuarios e historial de transacciones ",
       video: videoTechNook,
       multiVid: true,
+      urlPage: "https://technookstore.up.railway.app/",
     },
     {
       id: 1,
@@ -91,6 +92,10 @@ const InfoJobs = () => {
   };
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const newWindoPage = () => {
+    window.open(info[id].urlPage);
   };
 
   return (
@@ -173,10 +178,16 @@ const InfoJobs = () => {
           >
             {info[id].multiVid ? (
               <>
+                <Button
+                  variant="contained"
+                  onClick={newWindoPage}
+                  sx={{ marginBottom: "5%", marginTop: "-5%" }}
+                >
+                  Web
+                </Button>
                 <video width="100%" height="auto" controls autoPlay loop>
                   <source src={info[id].video} type="video/mp4" />
                 </video>
-                <Button variant="contained">Web</Button>
               </>
             ) : (
               <Grid

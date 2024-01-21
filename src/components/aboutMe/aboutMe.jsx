@@ -165,11 +165,11 @@ function AboutMe() {
             >
               <Grid
                 container
-                rowSpacing={5}
+                rowSpacing={{ xs: 2, sm: 3, md: 3, lg: 5 }}
                 columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
               >
                 {iconsData.map((icon, index) => (
-                  <Grid key={index} item xs={4} sm={6} md={4} lg={3}>
+                  <Grid key={index} item xs={4} sm={6} md={3} lg={3}>
                     <div>
                       <Avatar
                         alt="Icons"

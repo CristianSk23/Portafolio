@@ -96,7 +96,7 @@ const Jobs = ({ infoJobs }) => {
                     "@media (max-width:600px)": {
                       width: "320px",
                       height: "320px",
-                      marginTop: "1px",
+                      marginTop: "-5px",
                     },
                   }}
                 >
@@ -141,7 +141,9 @@ const Jobs = ({ infoJobs }) => {
                   </CardContent>
                   <CardActions>
                     <Link to={`/info/${index}`}>
-                      <Button size="small">Mas info</Button>
+                      <Button size="small" variant="contained">
+                        Mas info
+                      </Button>
                     </Link>
                   </CardActions>
                 </Card>
