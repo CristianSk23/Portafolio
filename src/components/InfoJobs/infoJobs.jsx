@@ -95,7 +95,9 @@ const InfoJobs = () => {
   };
 
   const newWindoPage = () => {
-    window.open(info[id].urlPage);
+    if (info[id].urlPage) {
+      window.open(info[id].urlPage);
+    }
   };
 
   return (
@@ -179,12 +181,13 @@ const InfoJobs = () => {
             {info[id].multiVid ? (
               <>
                 <Button
-                  variant="contained"
+                  variant={info[id].urlPage ? "contained" : "disabled"}
                   onClick={newWindoPage}
                   sx={{ marginBottom: "5%", marginTop: "-5%" }}
                 >
                   Web
                 </Button>
+
                 <video width="100%" height="auto" controls autoPlay loop>
                   <source src={info[id].video} type="video/mp4" />
                 </video>

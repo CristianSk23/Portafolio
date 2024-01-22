@@ -48,7 +48,15 @@ function Home() {
     >
       <Container>
         <div className="contenHome">
-          <div id="contenTitle">
+          <Box
+            sx={{
+              paddingTop: "30px",
+              marginLeft: "30%",
+              "@media (max-width:600px)": {
+                marginLeft: "2%",
+              },
+            }}
+          >
             <Typography
               variant="h1"
               sx={{
@@ -56,19 +64,88 @@ function Home() {
                 fontSize: "4rem",
                 textAlign: "center",
                 marginTop: "300px",
-                marginLeft: "30%",
+                /*  marginLeft: "30%", */
                 "@media (max-width:600px)": {
                   height: "100px",
                   width: "350px",
                   fontSize: "1.6rem",
                   marginTop: "150px",
-                  marginLeft: "5px",
                 },
               }}
             >
-              ¡HOLA! Soy Cristian Castaño <br></br>{" "}
-              <strong>Desarrollador Web</strong>
+              ¡HOLA! Soy Cristian Castaño
             </Typography>
+          </Box>
+
+          <div id="contenTitle">
+            <ul>
+              <li>
+                <Typography
+                  variant="subtitle1"
+                  sx={{
+                    flexGrow: 1,
+                    fontSize: "2.2rem",
+                    textAlign: "center",
+                    marginTop: "-50px",
+                    marginRight: "10%",
+                    "@media (max-width:600px)": {
+                      height: "100px",
+                      width: "350px",
+                      fontSize: "1.6rem",
+                      marginTop: "-10px",
+                      marginLeft: "-20px",
+                    },
+                  }}
+                >
+                  Desarrollador Web
+                </Typography>
+              </li>
+              <li>
+                {" "}
+                <Typography
+                  variant="subtitle1"
+                  sx={{
+                    flexGrow: 1,
+                    fontSize: "2.2rem",
+                    textAlign: "center",
+                    /* marginTop: "300px", */
+                    marginLeft: "0%",
+                    marginTop: "25px",
+                    "@media (max-width:600px)": {
+                      fontSize: "1.4rem",
+                      height: "100px",
+                      width: "350px",
+                      marginTop: "-5px",
+                      marginLeft: "-16px",
+                    },
+                  }}
+                >
+                  Desarrollador De videojuegos
+                </Typography>{" "}
+              </li>
+              <li>
+                {" "}
+                <Typography
+                  variant="subtitle1"
+                  sx={{
+                    flexGrow: 1,
+                    fontSize: "2.2rem",
+                    textAlign: "center",
+                    /*  marginTop: "300px", */
+                    /*  marginRight: "20%", */
+                    "@media (max-width:600px)": {
+                      fontSize: "1.4rem",
+                      height: "100px",
+                      width: "350px",
+                      marginTop: "-23px",
+                      marginLeft: "-16px",
+                    },
+                  }}
+                >
+                  Desarrollador De Software <br /> en proceso...
+                </Typography>
+              </li>
+            </ul>
           </div>
           <Box
             sx={{

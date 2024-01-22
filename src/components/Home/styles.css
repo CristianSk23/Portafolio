@@ -14,6 +14,48 @@
 
 #contenTitle {
   padding-top: 50px;
+  width: 1000px;
+  height: 40px;
+  display: flex;
+
+  margin-left: 40%;
+
+  line-height: 40px;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  padding-left: 10px;
+  margin: 0;
+  animation: change 6s infinite;
+}
+
+@keyframes change {
+  0% {
+    margin-top: 0;
+  }
+  20% {
+    margin-top: 0;
+  }
+  25% {
+    margin-top: -90px;
+  }
+  50% {
+    margin-top: -90px;
+  }
+  55% {
+    margin-top: -165px;
+  }
+  80% {
+    margin-top: -165px;
+  }
+  85% {
+    margin-top: -90px;
+  }
+  95% {
+    margin-top: -90px;
+  }
 }
 #buttonGroupRds {
   width: 248px;
@@ -46,6 +88,39 @@
     background-size: "cover";
     background-position: "center";
     background-repeat: "no-repeat";
+  }
+  #contenTitle {
+    width: auto;
+    height: 40px;
+    margin-top: -50px;
+    margin-left: 2%;
+    padding-top: 0px;
+  }
+  @keyframes change {
+    0% {
+      margin-top: 0;
+    }
+    20% {
+      margin-top: 0;
+    }
+    25% {
+      margin-top: -90px;
+    }
+    50% {
+      margin-top: -90px;
+    }
+    55% {
+      margin-top: -165px;
+    }
+    80% {
+      margin-top: -165px;
+    }
+    85% {
+      margin-top: -90px;
+    }
+    95% {
+      margin-top: -90px;
+    }
   }
 }
 
