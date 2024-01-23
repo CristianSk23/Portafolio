@@ -27,6 +27,7 @@ import gameDv6 from "../Design/JobsVid/gameDeveloper/Vid9.mp4";
 
 import wllpaper from "../Design/wllpaper3.jpg";
 import CloseIcon from "@mui/icons-material/Close";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const InfoJobs = () => {
   const { id } = useParams();
@@ -42,6 +43,10 @@ const InfoJobs = () => {
       video: videoTechNook,
       multiVid: true,
       urlPage: "https://technookstore.up.railway.app/",
+      urlGithub: [
+        "https://github.com/CristianSk23/PF-Client",
+        "https://github.com/micaortiz/PF-Server",
+      ],
     },
     {
       id: 1,
@@ -50,6 +55,7 @@ const InfoJobs = () => {
         "Aplicación web orientada a los amantes de los videojuegos, que permite explorar y gestionar información de videojuegos mediante la integración con la API de Rawg.io. La plataforma brinda a los usuarios la capacidad de buscar videojuegos, filtrar resultados, ver detalles y crear tarjetas personalizadas con información de sus juegos favoritos.",
       video: videoWebVideogames,
       multiVid: true,
+      urlGithub: "https://github.com/CristianSk23/ProyectoIndividual",
     },
     {
       id: 2,
@@ -94,10 +100,13 @@ const InfoJobs = () => {
     setOpen(false);
   };
 
-  const newWindoPage = () => {
+  const newWindowPage = () => {
     if (info[id].urlPage) {
       window.open(info[id].urlPage);
     }
+  };
+  const newWindowGithub = (url) => {
+    window.open(url);
   };
 
   return (
@@ -165,11 +174,43 @@ const InfoJobs = () => {
           >
             {info[id].label}
           </Typography>
+
+          <Box
+            sx={{
+              marginTop: "150px",
+              "@media (max-width:600px)": {
+                marginTop: "260px",
+                marginLeft: "0px",
+              },
+            }}
+          >
+            {Array.isArray(info[id].urlGithub) ? (
+              info[id].urlGithub.map((url, index) => (
+                <Button
+                  key={index}
+                  onClick={() => newWindowGithub(url)}
+                  startIcon={<GitHubIcon />}
+                  variant="contained"
+                >
+                  GitHub
+                </Button>
+              ))
+            ) : (
+              <Button
+                onClick={() => newWindowGithub(info[id].urlGithub)}
+                startIcon={<GitHubIcon />}
+                variant="contained"
+              >
+                Github
+              </Button>
+            )}
+          </Box>
+
           <Box
             sx={{
               width: "100%",
               height: "80px",
-              marginTop: "230px",
+              marginTop: "50px",
               marginLeft: "0px",
               "@media (max-width:600px)": {
                 width: "310px",
@@ -182,7 +223,7 @@ const InfoJobs = () => {
               <>
                 <Button
                   variant={info[id].urlPage ? "contained" : "disabled"}
-                  onClick={newWindoPage}
+                  onClick={newWindowPage}
                   sx={{ marginBottom: "5%", marginTop: "-5%" }}
                 >
                   Web

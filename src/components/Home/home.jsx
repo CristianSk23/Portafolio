@@ -134,13 +134,18 @@ function Home() {
                     width: "800px",
                     textAlign: "center",
                     marginTop: "12px",
-                    /*  marginRight: "20%", */
+                    marginLeft: "-20px",
                     "@media (max-width:600px)": {
                       fontSize: "1.4rem",
                       height: "100px",
                       width: "350px",
                       marginTop: "-28px",
                       marginLeft: "0px",
+                    },
+                    "@media (min-width:601px)": {
+                      br: {
+                        display: "none",
+                      },
                     },
                   }}
                 >

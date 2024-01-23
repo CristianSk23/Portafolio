@@ -25,15 +25,9 @@ import imageGD3 from "./components/Design/Tech/ft10GD.jpg";
 
 import Contact from "./components/contactMe/contact";
 import "./StylesA.css";
-import {
-  Route,
-  Routes,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 
 function App() {
-  
   const navArrayLinks = [
     {
       title: "Sobre Mi",
@@ -65,7 +59,7 @@ function App() {
       id: 1,
       title: "Web sobre Videojuegos",
       label:
-        " Aplicación web para amantes de videojuegos, permite explorar y gestionar información de juegos",
+        " Aplicación web para amantes de los videojuegos, permite explorar y gestionar información de juegos",
       image: [imageVg1, imageVg2, imageVg3],
     },
     {

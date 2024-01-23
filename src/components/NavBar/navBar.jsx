@@ -42,8 +42,7 @@ const NavBar = ({ navArrayLinks }) => {
               component="a"
               href="#home"
             >
-              <HomeIcon />
-              Castaño
+              Inicio
             </Typography>
           ) : (
             <Typography
@@ -53,8 +52,7 @@ const NavBar = ({ navArrayLinks }) => {
               component="a"
               href="/#home"
             >
-              <HomeIcon />
-              Castaño
+              Inicio
             </Typography>
           )}
 
