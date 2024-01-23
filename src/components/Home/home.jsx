@@ -58,7 +58,7 @@ function Home() {
             }}
           >
             <Typography
-              variant="h1"
+              variant="subtitle1"
               sx={{
                 flexGrow: 1,
                 fontSize: "4rem",
@@ -81,18 +81,18 @@ function Home() {
             <ul>
               <li>
                 <Typography
-                  variant="subtitle1"
+                  variant="subtitle2"
                   sx={{
                     flexGrow: 1,
-                    fontSize: "2.2rem",
+                    fontSize: "2.5rem",
                     textAlign: "center",
-                    marginTop: "-50px",
+                    marginTop: "-60px",
                     marginRight: "10%",
                     "@media (max-width:600px)": {
                       height: "100px",
                       width: "350px",
-                      fontSize: "1.6rem",
-                      marginTop: "-10px",
+                      fontSize: "1.4rem",
+                      marginTop: "-8px",
                       marginLeft: "-20px",
                     },
                   }}
@@ -103,19 +103,19 @@ function Home() {
               <li>
                 {" "}
                 <Typography
-                  variant="subtitle1"
+                  variant="subtitle2"
                   sx={{
                     flexGrow: 1,
-                    fontSize: "2.2rem",
+                    fontSize: "2.5rem",
                     textAlign: "center",
                     /* marginTop: "300px", */
-                    marginLeft: "0%",
-                    marginTop: "25px",
+                    marginRight: "5%",
+                    marginTop: "20px",
                     "@media (max-width:600px)": {
                       fontSize: "1.4rem",
                       height: "100px",
                       width: "350px",
-                      marginTop: "-5px",
+                      marginTop: "-2px",
                       marginLeft: "-16px",
                     },
                   }}
@@ -126,19 +126,20 @@ function Home() {
               <li>
                 {" "}
                 <Typography
-                  variant="subtitle1"
+                  variant="subtitle2"
                   sx={{
                     flexGrow: 1,
-                    fontSize: "2.2rem",
+                    fontSize: "2.5rem",
+                    width: "800px",
                     textAlign: "center",
-                    /*  marginTop: "300px", */
+                     marginTop: "12px",
                     /*  marginRight: "20%", */
                     "@media (max-width:600px)": {
                       fontSize: "1.4rem",
                       height: "100px",
                       width: "350px",
-                      marginTop: "-23px",
-                      marginLeft: "-16px",
+                      marginTop: "-28px",
+                      marginLeft: "-10px",
                     },
                   }}
                 >
@@ -152,9 +153,9 @@ function Home() {
               marginTop: "20px",
               marginLeft: "36%",
               "@media (max-width:600px)": {
-                marginLeft: "0px",
+                marginLeft: "10%",
                 textAlign: "center",
-                marginTop: "0px",
+                marginTop: "25px",
               },
             }}
           >
@@ -166,7 +167,7 @@ function Home() {
                 marginLeft: "25%",
                 "@media (max-width:600px)": {
                   fontSize: "1rem",
-                  marginBottom: "20px",
+                  marginBottom: "2px",
                   marginLeft: "0px",
                 },
               }}
