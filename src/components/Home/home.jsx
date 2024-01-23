@@ -70,6 +70,7 @@ function Home() {
                   width: "350px",
                   fontSize: "1.6rem",
                   marginTop: "150px",
+                  marginLeft: "2px",
                 },
               }}
             >
@@ -93,7 +94,7 @@ function Home() {
                       width: "350px",
                       fontSize: "1.4rem",
                       marginTop: "-8px",
-                      marginLeft: "-20px",
+                      marginLeft: "0px",
                     },
                   }}
                 >
@@ -114,9 +115,9 @@ function Home() {
                     "@media (max-width:600px)": {
                       fontSize: "1.4rem",
                       height: "100px",
-                      width: "350px",
+                      width: "360px",
                       marginTop: "-2px",
-                      marginLeft: "-16px",
+                      marginLeft: "-3px",
                     },
                   }}
                 >
@@ -132,14 +133,14 @@ function Home() {
                     fontSize: "2.5rem",
                     width: "800px",
                     textAlign: "center",
-                     marginTop: "12px",
+                    marginTop: "12px",
                     /*  marginRight: "20%", */
                     "@media (max-width:600px)": {
                       fontSize: "1.4rem",
                       height: "100px",
                       width: "350px",
                       marginTop: "-28px",
-                      marginLeft: "-10px",
+                      marginLeft: "0px",
                     },
                   }}
                 >

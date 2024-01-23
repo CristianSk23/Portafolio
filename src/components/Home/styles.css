@@ -90,10 +90,10 @@ ul {
     background-repeat: "no-repeat";
   }
   #contenTitle {
-    width: auto;
+    width: 360px;
     height: 60px;
     margin-top: -50px;
-    margin-left: 2%;
+    margin-left: 0px;
     padding-top: 0px;
   }
   @keyframes change {
