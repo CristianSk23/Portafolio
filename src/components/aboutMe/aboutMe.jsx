@@ -125,7 +125,7 @@ function AboutMe() {
                 },
               }}
             >
-              Apasionado desarrollador con un año de experiencia en el
+              Apasionado desarrollador con experiencia en el
               fascinante mundo de los videojuegos y una inmersión actual en el
               emocionante campo del desarrollo web. Siempre en busca de desafíos
               que impulsen el crecimiento profesional. Actualmente aprendiendo
