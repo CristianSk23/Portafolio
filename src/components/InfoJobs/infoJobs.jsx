@@ -47,6 +47,7 @@ const InfoJobs = () => {
         "https://github.com/CristianSk23/PF-Client",
         "https://github.com/micaortiz/PF-Server",
       ],
+      titleGit: ["Repositorio Backend", "Repositorio Frontend"],
     },
     {
       id: 1,
@@ -153,46 +154,61 @@ const InfoJobs = () => {
           >
             {info[id].title}
           </Typography>
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            height: "200px",
+            marginTop: "40px",
+            "@media (max-width:600px)": {
+              width: "100%",
+              height: "auto",
+              marginTop: "0px",
+              marginBottom: "10px",
+              marginLeft: "0px",
+              alignItems: "initial",
+              justifyContent: "inital",
+            },
+          }}
+        >
           <Typography
             variant="body1"
             sx={{
               fontSize: "1.8rem",
-              width: "100%",
-              height: "80px",
-              marginTop: "30px",
               "@media (max-width:600px)": {
                 fontSize: "1.2rem",
-                width: "100%",
-                height: "100px",
-                marginTop: "0px",
-                marginBottom: "10px",
-                marginLeft: "0px",
-                alignItems: "initial",
-                justifyContent: "inital",
               },
             }}
           >
             {info[id].label}
           </Typography>
+        </Box>
 
-          <Box
-            sx={{
-              marginTop: "150px",
-              "@media (max-width:600px)": {
-                marginTop: "260px",
-                marginLeft: "0px",
-              },
-            }}
-          >
-            {Array.isArray(info[id].urlGithub) ? (
+        <Box
+          sx={{
+            marginTop: "150px",
+            "@media (max-width:600px)": {
+              marginTop: "260px",
+              marginLeft: "0px",
+            },
+          }}
+        >
+          {info[id].id !== 2 &&
+            (Array.isArray(info[id].urlGithub) ? (
               info[id].urlGithub.map((url, index) => (
                 <Button
                   key={index}
                   onClick={() => newWindowGithub(url)}
                   startIcon={<GitHubIcon />}
                   variant="contained"
+                  sx={{
+                    marginRight: "20px",
+                    "@media (max-width:600px)": {
+                      marginTop: "15px",
+                    },
+                  }}
                 >
-                  GitHub
+                  {info[id].titleGit[index]}
                 </Button>
               ))
             ) : (
@@ -201,115 +217,130 @@ const InfoJobs = () => {
                 startIcon={<GitHubIcon />}
                 variant="contained"
               >
-                Github
+                Repositorio
               </Button>
-            )}
-          </Box>
+            ))}
+        </Box>
 
-          <Box
-            sx={{
-              width: "100%",
-              height: "80px",
-              marginTop: "50px",
+        <Box
+          sx={{
+            width: "100%",
+            height: "80px",
+            marginTop: "50px",
+            marginLeft: "0px",
+            "@media (max-width:600px)": {
+              width: "310px",
+              marginTop: "260px",
               marginLeft: "0px",
-              "@media (max-width:600px)": {
-                width: "310px",
-                marginTop: "260px",
-                marginLeft: "0px",
-              },
-            }}
-          >
-            {info[id].multiVid ? (
-              <>
-                <Button
-                  variant={info[id].urlPage ? "contained" : "disabled"}
-                  onClick={newWindowPage}
-                  sx={{ marginBottom: "5%", marginTop: "-5%" }}
-                >
-                  Web
-                </Button>
-
-                <video width="100%" height="auto" controls autoPlay loop>
+            },
+          }}
+        >
+          {info[id].multiVid ? (
+            <>
+              <Button
+                variant={info[id].urlPage ? "contained" : "disabled"}
+                onClick={newWindowPage}
+                sx={{
+                  marginBottom: "5%",
+                  marginTop: "-9%",
+                  marginLeft: "42%",
+                  "@media (max-width:600px)": {
+                    marginTop: "-145%",
+                    marginLeft: "0px",
+                    marginBottom: "0%",
+                  },
+                }}
+              >
+                Web
+              </Button>
+              <Box
+                sx={{
+                  "@media (max-width:600px)": {
+                    marginTop: "-100px",
+                  },
+                }}
+              >
+                <video width="100%" height="auto" controls autoPlay loop sx>
                   <source src={info[id].video} type="video/mp4" />
                 </video>
-              </>
-            ) : (
-              <Grid
-                container
-                rowSpacing={{ xs: 8, sm: 1, md: 2, lg: 15 }}
-                columnSpacing={{ xs: 1, sm: 1, md: 2, lg: 10 }}
-              >
-                {info[id].video.map((video, index) => (
-                  <Grid
-                    key={index}
-                    item
-                    xs={8}
-                    sm={6}
-                    md={4}
-                    lg={4}
-                    sx={{
-                      "@media (max-width:600px)": {
-                        marginLeft: "60px",
-                      },
-                    }}
-                  >
-                    <video
-                      key={index}
-                      width="100%"
-                      height="auto"
-                      controls
-                      autoPlay
-                      loop
-                    >
-                      <source src={video} type="video/mp4" />
-                    </video>
-                    <Button
-                      variant="contained"
-                      sx={{
-                        width: { xs: "25%", sm: "80%", md: "60%", lg: "30%" },
-                        marginLeft: "30%",
-                        marginTop: "5%",
-                      }}
-                      onClick={() => handleClickOpen(index)}
-                    >
-                      Info
-                    </Button>
-                  </Grid>
-                ))}
-                <BootstrapDialog
-                  onClose={handleClose}
-                  aria-labelledby="customized-dialog-title"
-                  open={open}
+              </Box>
+            </>
+          ) : (
+            <Grid
+              container
+              rowSpacing={{ xs: 8, sm: 1, md: 2, lg: 15 }}
+              columnSpacing={{ xs: 1, sm: 1, md: 2, lg: 10 }}
+            >
+              {info[id].video.map((video, index) => (
+                <Grid
+                  key={index}
+                  item
+                  xs={8}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  sx={{
+                    "@media (max-width:600px)": {
+                      marginLeft: "60px",
+                    },
+                  }}
                 >
-                  <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-                    {info[id].titleDesc[indexText]}
-                  </DialogTitle>
-                  <IconButton
-                    aria-label="close"
-                    onClick={handleClose}
-                    sx={{
-                      position: "absolute",
-                      right: 8,
-                      top: 8,
-                      color: (theme) => theme.palette.grey[500],
-                    }}
+                  <video
+                    key={index}
+                    width="100%"
+                    height="auto"
+                    controls
+                    autoPlay
+                    loop
                   >
-                    <CloseIcon />
-                  </IconButton>
-                  <DialogContent dividers>
-                    <Typography gutterBottom>
-                      {info[id].descriptionVg[indexText]}
-                    </Typography>
-                  </DialogContent>
-                  <DialogActions>
-                    <Button autoFocus onClick={handleClose} variant="contained">
-                      Continuar
-                    </Button>
-                  </DialogActions>
-                </BootstrapDialog>
-              </Grid>
-            )}
-          </Box>
+                    <source src={video} type="video/mp4" />
+                  </video>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      width: { xs: "25%", sm: "80%", md: "20%", lg: "30%" },
+                      marginLeft: "30%",
+                      marginTop: "5%",
+                    }}
+                    onClick={() => handleClickOpen(index)}
+                  >
+                    Info
+                  </Button>
+                </Grid>
+              ))}
+              <BootstrapDialog
+                onClose={handleClose}
+                aria-labelledby="customized-dialog-title"
+                open={open}
+              >
+                <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+                  {info[id].titleDesc[indexText]}
+                </DialogTitle>
+                <IconButton
+                  aria-label="close"
+                  onClick={handleClose}
+                  sx={{
+                    position: "absolute",
+                    right: 8,
+                    top: 8,
+                    color: (theme) => theme.palette.grey[500],
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
+                <DialogContent dividers>
+                  <Typography gutterBottom>
+                    {info[id].descriptionVg[indexText]}
+                  </Typography>
+                </DialogContent>
+                <DialogActions>
+                  <Button autoFocus onClick={handleClose} variant="contained">
+                    Continuar
+                  </Button>
+                </DialogActions>
+              </BootstrapDialog>
+            </Grid>
+          )}
         </Box>
       </Container>
     </Paper>
