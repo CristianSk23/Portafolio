@@ -134,7 +134,7 @@ const InfoJobs = () => {
           <Typography
             variant="subtitle2"
             sx={{
-              fontSize: "2.6rem",
+              fontSize: "4rem",
               width: "100%",
               height: "80px",
               display: "flex",
@@ -160,6 +160,7 @@ const InfoJobs = () => {
             width: "100%",
             height: "200px",
             marginTop: "40px",
+            marginBottom: "-100px",
             "@media (max-width:600px)": {
               width: "100%",
               height: "auto",

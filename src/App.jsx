@@ -28,6 +28,8 @@ import "./StylesA.css";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 
 function App() {
+ 
+
   const navArrayLinks = [
     {
       title: "Sobre Mi",
