@@ -57,10 +57,17 @@ const Jobs = ({ infoJobs }) => {
           <Box>
             <Typography
               variant="subtitle2"
-              sx={{ textAlign: "center", fontSize: "5rem" }}
+              sx={{
+                textAlign: "center",
+                fontSize: "5rem",
+                "@media (max-width:600px)": {
+                  fontSize: "3.5rem",
+                },
+              }}
             >
               Portafolio
             </Typography>
+            
             <Typography
               variant="body1"
               sx={{
@@ -69,6 +76,7 @@ const Jobs = ({ infoJobs }) => {
                 marginTop: "50px",
                 "@media (max-width:600px)": {
                   fontSize: "1.2rem",
+                  marginTop: "20px",
                 },
               }}
             >

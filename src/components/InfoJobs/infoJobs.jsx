@@ -126,7 +126,7 @@ const InfoJobs = () => {
           paddingTop: "30px",
           borderWidth: "60px ",
           "@media (max-width:600px)": {
-            height: "1920px",
+            height: "100%vw",
           },
         }}
       >
@@ -189,7 +189,7 @@ const InfoJobs = () => {
           sx={{
             marginTop: "150px",
             "@media (max-width:600px)": {
-              marginTop: "260px",
+              marginTop: "200px",
               marginLeft: "0px",
             },
           }}
