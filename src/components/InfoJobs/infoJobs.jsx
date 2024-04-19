@@ -126,7 +126,7 @@ const InfoJobs = () => {
           paddingTop: "30px",
           borderWidth: "60px ",
           "@media (max-width:600px)": {
-            height: "100%vw",
+            height: "1920px",
           },
         }}
       >
