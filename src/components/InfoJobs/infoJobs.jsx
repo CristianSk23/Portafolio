@@ -165,7 +165,6 @@ const InfoJobs = () => {
               width: "100%",
               height: "auto",
               marginTop: "0px",
-              marginBottom: "10px",
               marginLeft: "0px",
               alignItems: "initial",
               justifyContent: "inital",
@@ -189,7 +188,7 @@ const InfoJobs = () => {
           sx={{
             marginTop: "150px",
             "@media (max-width:600px)": {
-              marginTop: "200px",
+              marginTop: "180px",
               marginLeft: "0px",
             },
           }}
