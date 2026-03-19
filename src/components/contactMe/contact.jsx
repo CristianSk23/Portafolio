@@ -1,155 +1,129 @@
 import React from "react";
-import { Box, Button, Container, Paper, Typography } from "@mui/material";
-import "./styles.css";
+import { Box, Button, Container, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import wllpaper from "../Design/wllpaper3.jpg";
-
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import ArticleIcon from "@mui/icons-material/Article";
+import EmailIcon from "@mui/icons-material/Email";
 
 const Contact = () => {
-
   const urlGit = "https://github.com/CristianSk23";
-  const newWindoGit = () => {
-    window.open(urlGit);
-  };
   const urlLinke = "https://www.linkedin.com/in/cristian-castano23/";
-  const newWindoLinke = () => {
-    window.open(urlLinke);
-  };
+  const email = "cristian200127@gmail.com";
 
   return (
-    <Paper
-      elevation={4}
+    <Box
       sx={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${wllpaper})`,
+        backgroundImage: `linear-gradient(135deg, rgba(13,17,23,0.97) 0%, rgba(13,17,23,0.93) 100%), url(${wllpaper})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        py: { xs: 14, md: 20 },
+        textAlign: "center",
       }}
     >
-      <Container elevation={4}>
-        <Box
-          sx={{
-            height: "1080px",
-            marginTop: "30px",
-            paddingTop: "60px",
-          }}
+      <Container maxWidth="md">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
           <Typography
-            variant="subtitle2"
+            variant="overline"
             sx={{
-              flexGrow: 1,
-              fontSize: "3rem",
-              textAlign: "center",
-              marginTop: "15%",
-              marginBottom: "15%",
-              width: "200px",
-              height: "30px",
-              marginLeft: "40%",
-              "@media (max-width:600px)": {
-                width: "50px",
-                height: "30px",
-                fontSize: "2.5rem",
-                textAlign: "center",
-                marginLeft: "18%",
-                marginBottom: "25%",
-              },
+              color: "primary.light",
+              letterSpacing: "0.2em",
+              display: "block",
+              mb: 1,
+              fontSize: "0.72rem",
             }}
           >
-            Contáctame
+            CONTACTO
           </Typography>
-          <Box>
-            <Typography
-              variant="subtitle2"
-              sx={{
-                flexGrow: 1,
-                fontSize: "2rem",
-                textAlign: "center",
-                marginTop: "70px",
-                width: "auto",
-                height: "30px",
-                marginLeft: "5%",
-                "@media (max-width:600px)": {
-                  width: "auto",
-                  height: "auto",
-                  fontSize: "1.3rem",
-                  textAlign: "center",
-                  marginTop: "25px",
-                  marginBottom: "90px",
-                },
-              }}
-            >
-              Estoy entusiasmado con la posibilidad de colaborar contigo en
-              futuros proyectos. Creo que podemos lograr cosas increíbles
-              juntos. Si algo en mi portafolio te llama la atención o tienes
-              alguna idea en mente, estaré encantado de discutir cómo podemos
-              trabajar juntos.
-            </Typography>
-          </Box>
-          <Box // Contain of the button´s group
+
+          <Typography
+            variant="h3"
             sx={{
-              "& button": { m: 1 },
-              marginTop: "20%",
-              marginLeft: "39%",
-              "@media (max-width:600px)": {
-                marginTop: "-10px",
-                marginLeft: "20%",
-              },
+              fontWeight: 700,
+              mb: 3,
+              background: "linear-gradient(135deg, #F8FAFC 40%, #94A3B8 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Trabajemos Juntos
+          </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{
+              color: "text.secondary",
+              maxWidth: 500,
+              mx: "auto",
+              mb: 6,
+              lineHeight: 1.9,
+              fontSize: "1.05rem",
+            }}
+          >
+            Estoy entusiasmado con la posibilidad de colaborar en proyectos
+            increíbles. Si algo de mi portafolio te llama la atención, no dudes
+            en escribirme.
+          </Typography>
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: 2,
+              flexWrap: "wrap",
             }}
           >
             <Button
               variant="contained"
+              size="large"
               startIcon={<GitHubIcon />}
-              onClick={newWindoGit}
-              sx={{
-                color: "white",
-                "@media (max-width:600px)": {
-                  fontSize: "0.5rem",
-                  width: "80px",
-                  height: "30px",
-                },
-              }}
+              href={urlGit}
+              target="_blank"
+              sx={{ cursor: "pointer", px: 4 }}
             >
-              Github
+              GitHub
             </Button>
+
             <Button
               variant="contained"
+              size="large"
+              color="secondary"
               startIcon={<LinkedInIcon />}
-              onClick={newWindoLinke}
-              sx={{
-                marginLeft: "10px",
-                color: "white",
-                "@media (max-width:600px)": {
-                  fontSize: "0.5rem",
-                  width: "80px",
-                  height: "30px",
-                },
-              }}
+              href={urlLinke}
+              target="_blank"
+              sx={{ cursor: "pointer", px: 4 }}
             >
               LinkedIn
             </Button>
-            {/* <Button
-              variant="contained"
-              startIcon={<ArticleIcon />}
-              download="Cristian_Castano_Cv.pdf"
-              href={cvLink}
+
+            <Button
+              variant="outlined"
+              size="large"
+              startIcon={<EmailIcon />}
+              href={`mailto:${email}`}
               sx={{
-                marginLeft: "10px",
-                color: "white",
-                "@media (max-width:600px)": {
-                  fontSize: "0.5rem",
-                  width: "80px",
-                  height: "30px",
+                borderColor: "rgba(255,255,255,0.15)",
+                color: "text.primary",
+                cursor: "pointer",
+                px: 4,
+                "&:hover": {
+                  borderColor: "primary.main",
+                  bgcolor: "rgba(37,99,235,0.08)",
                 },
               }}
             >
-              CV
-            </Button> */}
+              Email
+            </Button>
           </Box>
-        </Box>
+        </motion.div>
       </Container>
-    </Paper>
+    </Box>
   );
 };
 

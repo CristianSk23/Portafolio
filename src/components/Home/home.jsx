@@ -1,281 +1,292 @@
-import { Box, Button, Container, Paper, Typography } from "@mui/material";
-import React, { useState } from "react";
-import "./styles.css";
-//Icons
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Typography,
+  Avatar,
+  Chip,
+} from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ArticleIcon from "@mui/icons-material/Article";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CheckIcon from "@mui/icons-material/Check";
-//Links
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+
+import fotoPerfil from "../Design/perfilAi.jpg";
+import React, { useState } from "react";
 import cvLink from "./cvPdf/Cristian_Castano_Cv.pdf";
+import wallpaper from "../Design/wllpaper3.jpg";
 
 const email = "cristian200127@gmail.com";
-import wllpaper from "../Design/wllpaper3.jpg";
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "PHP",
+  "React.js",
+  "Node.js",
+  "Bootstrap",
+  "Material UI",
+  "C#",
+  "Unity",
+];
 
 function Home() {
   const [copied, setCopied] = useState(false);
-  const [iconChange, setIconChange] = useState(false);
 
-  const urlGit = "https://github.com/CristianSk23";
-  const newWindoGit = () => {
-    window.open(urlGit);
-  };
-  const urlLinke = "https://www.linkedin.com/in/cristian-castano23/";
-  const newWindoLinke = () => {
-    window.open(urlLinke);
-  };
-
-  const copyEmail = async () => {
+  const copyEmail = () => {
     navigator.clipboard.writeText(email).then(() => {
       setCopied(true);
-      setIconChange(true);
-      setTimeout(() => {
-        setCopied(false), setIconChange(false);
-      }, 5000);
+      setTimeout(() => setCopied(false), 3000);
     });
   };
 
   return (
-    <Paper
-      elevation={4}
+    <Box
       sx={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${wllpaper})`,
+        minHeight: "100vh",
+        backgroundImage: `linear-gradient(135deg, rgba(13,17,23,0.92) 0%, rgba(13,17,23,0.85) 100%), url(${wallpaper})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        display: "flex",
+        alignItems: "center",
+        py: { xs: 10, md: 12 },
       }}
     >
-      <Container>
-        <div className="contenHome">
-          <Box
-            sx={{
-              paddingTop: "30px",
-              marginLeft: "30%",
-              "@media (max-width:600px)": {
-                marginLeft: "2%",
-              },
-            }}
-          >
-            <Typography
-              variant="subtitle1"
-              sx={{
-                flexGrow: 1,
-                fontSize: "4rem",
-                textAlign: "center",
-                marginTop: "300px",
-                /*  marginLeft: "30%", */
-                "@media (max-width:600px)": {
-                  height: "100px",
-                  width: "350px",
-                  fontSize: "1.6rem",
-                  marginTop: "150px",
-                  marginLeft: "2px",
-                },
-              }}
+      <Container maxWidth="lg">
+        <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
+          {/* Left: Avatar + email */}
+          <Grid item xs={12} md={4} sx={{ textAlign: "center" }}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              ¡HOLA! Soy Cristian Castaño
-            </Typography>
-          </Box>
+              {/* Avatar with gradient ring */}
+              <Box
+                sx={{
+                  position: "relative",
+                  display: "inline-block",
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    inset: -4,
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #2563EB, #7C3AED)",
+                    zIndex: 0,
+                  },
+                }}
+              >
+                <Avatar
+                  alt="Cristian Castaño"
+                  src={fotoPerfil}
+                  sx={{
+                    width: { xs: 160, sm: 190, md: 210 },
+                    height: { xs: 160, sm: 190, md: 210 },
+                    position: "relative",
+                    zIndex: 1,
+                    border: "4px solid #0D1117",
+                  }}
+                />
+              </Box>
+            </motion.div>
 
-          <div id="contenTitle">
-            <ul>
-              <li>
-                <Typography
-                  variant="subtitle2"
+            {/* Copy email */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
+              <Button
+                onClick={copyEmail}
+                startIcon={copied ? <CheckIcon /> : <ContentCopyIcon />}
+                sx={{
+                  mt: 3,
+                  px: 2.5,
+                  py: 1,
+                  borderRadius: 2,
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  bgcolor: "rgba(255,255,255,0.03)",
+                  color: copied ? "success.main" : "text.secondary",
+                  fontSize: "0.75rem",
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    border: "1px solid rgba(37,99,235,0.5)",
+                    bgcolor: "rgba(37,99,235,0.08)",
+                    color: "primary.light",
+                  },
+                }}
+              >
+                {copied ? "Correo copiado!" : email}
+              </Button>
+            </motion.div>
+          </Grid>
+
+          {/* Right: Info */}
+          <Grid item xs={12} md={8}>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              {/* Subtitle label */}
+              <Typography
+                variant="overline"
+                sx={{
+                  color: "primary.light",
+                  letterSpacing: "0.2em",
+                  mb: 1,
+                  display: "block",
+                  fontSize: "0.72rem",
+                }}
+              >
+                FULL STACK DEVELOPER
+              </Typography>
+
+              {/* Animated name */}
+              <Typography
+                variant="h2"
+                sx={{
+                  fontWeight: 800,
+                  mb: 1,
+                  background: "linear-gradient(135deg, #F8FAFC 30%, #94A3B8 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
+                  minHeight: { xs: "2.8rem", md: "3.6rem" },
+                }}
+              >
+                <TypeAnimation
+                  sequence={[
+                    "Cristian Castaño",
+                    3000,
+                    "Full Stack Dev",
+                    2500,
+                    "Game Developer",
+                    2000,
+                  ]}
+                  wrapper="span"
+                  speed={55}
+                  repeat={Infinity}
+                />
+              </Typography>
+
+              {/* Description */}
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "text.secondary",
+                  lineHeight: 1.8,
+                  mb: 4,
+                  maxWidth: 560,
+                  fontSize: { xs: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Desarrollador Full Stack con base sólida en programación
+                orientada a objetos, desarrollo web y creación de videojuegos.
+                Autodidacta, colaborativo y motivado por la mejora continua.
+              </Typography>
+
+              {/* Social buttons */}
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 1.5,
+                  flexWrap: "wrap",
+                  mb: 5,
+                }}
+              >
+                <Button
+                  variant="contained"
+                  startIcon={<GitHubIcon />}
+                  href="https://github.com/CristianSk23"
+                  target="_blank"
+                  sx={{ cursor: "pointer" }}
+                >
+                  GitHub
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  startIcon={<LinkedInIcon />}
+                  href="https://www.linkedin.com/in/cristian-castano23/"
+                  target="_blank"
+                  sx={{ cursor: "pointer" }}
+                >
+                  LinkedIn
+                </Button>
+                <Button
+                  variant="outlined"
+                  startIcon={<ArticleIcon />}
+                  download="Cristian_Castano_Cv.pdf"
+                  href={cvLink}
                   sx={{
-                    flexGrow: 1,
-                    fontSize: "2.5rem",
-                    textAlign: "center",
-                    marginTop: "-60px",
-                    marginRight: "10%",
-                    "@media (max-width:600px)": {
-                      height: "100px",
-                      width: "350px",
-                      fontSize: "1.4rem",
-                      marginTop: "-8px",
-                      marginLeft: "0px",
+                    borderColor: "rgba(255,255,255,0.15)",
+                    color: "text.primary",
+                    cursor: "pointer",
+                    "&:hover": {
+                      borderColor: "primary.main",
+                      bgcolor: "rgba(37,99,235,0.08)",
                     },
                   }}
                 >
-                  Desarrollador Web
-                </Typography>
-              </li>
-              <li>
-                {" "}
-                <Typography
-                  variant="subtitle2"
-                  sx={{
-                    flexGrow: 1,
-                    fontSize: "2.5rem",
-                    textAlign: "center",
-                    /* marginTop: "300px", */
-                    marginRight: "5%",
-                    marginTop: "20px",
-                    "@media (max-width:600px)": {
-                      fontSize: "1.4rem",
-                      height: "100px",
-                      width: "360px",
-                      marginTop: "-2px",
-                      marginLeft: "-3px",
-                    },
-                  }}
-                >
-                  Desarrollador De videojuegos
-                </Typography>{" "}
-              </li>
-              <li>
-                {" "}
-                <Typography
-                  variant="subtitle2"
-                  sx={{
-                    flexGrow: 1,
-                    fontSize: "2.5rem",
-                    width: "800px",
-                    textAlign: "center",
-                    marginTop: "12px",
-                    marginLeft: "-20px",
-                    "@media (max-width:600px)": {
-                      fontSize: "1.4rem",
-                      height: "100px",
-                      width: "350px",
-                      marginTop: "-28px",
-                      marginLeft: "0px",
-                    },
-                    "@media (min-width:601px)": {
-                      br: {
-                        display: "none",
-                      },
-                    },
-                  }}
-                >
-                  Desarrollador De Software <br /> en proceso...
-                </Typography>
-              </li>
-            </ul>
-          </div>
-          <Box
-            sx={{
-              marginTop: "20px",
-              marginLeft: "36%",
-              "@media (max-width:600px)": {
-                marginLeft: "10%",
-                textAlign: "center",
-                marginTop: "25px",
-              },
-            }}
-          >
-            {" "}
-            <Typography
-              variant="subtitle2"
-              sx={{
-                fontSize: "1.4rem",
-                marginLeft: "25%",
-                "@media (max-width:600px)": {
-                  fontSize: "1rem",
-                  marginBottom: "2px",
-                  marginLeft: "0px",
-                },
-              }}
-            >
-              cristian200127@gmail.com
-            </Typography>
-            <Button
-              onClick={copyEmail}
-              variant="outlined"
-              startIcon={iconChange ? <CheckIcon /> : <ContentCopyIcon />}
-              sx={{
-                color: "white",
-                marginLeft: "55%",
-                marginTop: "-55px",
-                "@media (max-width:800px)": {
-                  fontSize: "0.6rem",
-                  marginLeft: "0px",
-                  marginTop: "20px",
-                  marginBottom: "30px",
-                  width: "75px",
-                  height: "25px",
-                },
-              }}
-            >
-              {copied ? "Copiado" : "Copiar"}
-            </Button>
-          </Box>
-          <Box // Contain of the button´s group
-            sx={{
-              "& button": { m: 1 },
-              marginTop: "20px",
-              marginLeft: "53%",
-              "@media (max-width:600px)": {
-                marginTop: "-10px",
-                marginLeft: "40px",
-              },
-            }}
-          >
-            <Button
-              variant="contained"
-              startIcon={<GitHubIcon />}
-              onClick={newWindoGit}
-              sx={{
-                color: "white",
-                "@media (max-width:600px)": {
-                  fontSize: "0.5rem",
-                  width: "80px",
-                  height: "30px",
-                },
-              }}
-            >
-              Github
-            </Button>
-            <Button
-              variant="contained"
-              startIcon={<LinkedInIcon />}
-              onClick={newWindoLinke}
-              sx={{
-                marginLeft: "10px",
-                color: "white",
-                "@media (max-width:600px)": {
-                  fontSize: "0.5rem",
-                  width: "80px",
-                  height: "30px",
-                },
-              }}
-            >
-              LinkedIn
-            </Button>
-            <Button
-              variant="contained"
-              startIcon={<ArticleIcon />}
-              download="Cristian_Castano_Cv.pdf"
-              href={cvLink}
-              sx={{
-                marginLeft: "10px",
-                color: "white",
-                "@media (max-width:600px)": {
-                  fontSize: "0.5rem",
-                  width: "80px",
-                  height: "30px",
-                },
-              }}
-            >
-              CV
-            </Button>
-          </Box>
-        </div>
+                  Descargar CV
+                </Button>
+              </Box>
+
+              {/* Skills chips */}
+              <Typography
+                variant="overline"
+                sx={{
+                  color: "text.secondary",
+                  letterSpacing: "0.2em",
+                  mb: 2,
+                  display: "block",
+                  fontSize: "0.7rem",
+                }}
+              >
+                TECNOLOGÍAS
+              </Typography>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+                {skills.map((skill, i) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.6 + i * 0.05, duration: 0.3 }}
+                  >
+                    <Chip
+                      label={skill}
+                      size="small"
+                      sx={{
+                        bgcolor: "rgba(37,99,235,0.1)",
+                        color: "#60A5FA",
+                        border: "1px solid rgba(37,99,235,0.22)",
+                        fontWeight: 500,
+                        fontSize: "0.78rem",
+                        cursor: "default",
+                        transition: "all 0.2s ease",
+                        "&:hover": {
+                          bgcolor: "rgba(37,99,235,0.2)",
+                          border: "1px solid rgba(37,99,235,0.45)",
+                        },
+                      }}
+                    />
+                  </motion.div>
+                ))}
+              </Box>
+            </motion.div>
+          </Grid>
+        </Grid>
       </Container>
-    </Paper>
+    </Box>
   );
 }
 
 export default Home;
-
-/*    id="icons"
-                      style={{
-                        backgroundImage: `url(${icon.icon})`,
-                        width: "100%",
-                        height: "100%",
-                        margin: "20px",
-                        backgroundSize: "contain",
-                        backgroundRepeat: "norepeat",
-                        backgroundPosition: "center",
-                      }} */

@@ -2,7 +2,6 @@ import {
   AppBar,
   Box,
   Button,
-  Container,
   Drawer,
   IconButton,
   Toolbar,
@@ -11,8 +10,19 @@ import {
 import React, { useState } from "react";
 import NavListDrawer from "./navListDrawer";
 import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
+
+const brandSx = {
+  flexGrow: 1,
+  fontWeight: 800,
+  fontSize: "1.3rem",
+  letterSpacing: "-0.01em",
+  background: "linear-gradient(135deg, #2563EB, #7C3AED)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  textDecoration: "none",
+  cursor: "pointer",
+};
 
 const NavBar = ({ navArrayLinks }) => {
   const [open, setOpen] = useState(false);
@@ -22,56 +32,85 @@ const NavBar = ({ navArrayLinks }) => {
     navigate("/" + navArrayLinks[index].path);
   };
 
+  const isHome = location.pathname === "/";
+
   return (
     <>
-      <AppBar position="sticky">
-        <Toolbar>
+      <AppBar
+        position="sticky"
+        sx={{
+          background: "rgba(13, 17, 23, 0.88)",
+          backdropFilter: "blur(18px)",
+          WebkitBackdropFilter: "blur(18px)",
+          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          boxShadow: "none",
+        }}
+      >
+        <Toolbar sx={{ px: { xs: 2, sm: 4 }, minHeight: "64px !important" }}>
+          {/* Mobile menu button */}
           <IconButton
             color="inherit"
             size="large"
             onClick={() => setOpen(true)}
-            sx={{ display: { xs: "flex", sm: "none" } }}
+            sx={{
+              display: { xs: "flex", sm: "none" },
+              mr: 1,
+              cursor: "pointer",
+              color: "text.secondary",
+              "&:hover": { color: "text.primary", bgcolor: "rgba(255,255,255,0.05)" },
+            }}
           >
-            <MenuIcon size="large" />
+            <MenuIcon />
           </IconButton>
-          {location.pathname === "/" ? (
-            <Typography
-              variant="h6"
-              sx={{ flexGrow: 1 }}
-              color="inherit"
-              component="a"
-              href="#home"
-            >
-              Inicio
-            </Typography>
-          ) : (
-            <Typography
-              variant="h6"
-              sx={{ flexGrow: 1 }}
-              color="inherit"
-              component="a"
-              href="/#home"
-            >
-              Inicio
-            </Typography>
-          )}
 
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          {/* Brand */}
+          <Typography
+            component="a"
+            href={isHome ? "#home" : "/#home"}
+            sx={brandSx}
+          >
+            CC
+          </Typography>
+
+          {/* Desktop nav links */}
+          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 0.5 }}>
             {navArrayLinks.map((item, index) =>
-              location.pathname === "/" ? (
+              isHome ? (
                 <Button
-                  color="inherit"
                   key={item.title}
                   component="a"
                   href={item.path}
+                  sx={{
+                    color: "text.secondary",
+                    fontWeight: 500,
+                    fontSize: "0.9rem",
+                    cursor: "pointer",
+                    borderRadius: 2,
+                    transition: "color 0.2s, background 0.2s",
+                    "&:hover": {
+                      color: "text.primary",
+                      bgcolor: "rgba(255,255,255,0.06)",
+                    },
+                  }}
                 >
                   {item.title}
                 </Button>
               ) : (
                 <Button
-                  color="inherit"
                   key={item.title}
                   onClick={() => urlPathJobs(index)}
+                  sx={{
+                    color: "text.secondary",
+                    fontWeight: 500,
+                    fontSize: "0.9rem",
+                    cursor: "pointer",
+                    borderRadius: 2,
+                    transition: "color 0.2s, background 0.2s",
+                    "&:hover": {
+                      color: "text.primary",
+                      bgcolor: "rgba(255,255,255,0.06)",
+                    },
+                  }}
                 >
                   {item.title}
                 </Button>
@@ -85,7 +124,14 @@ const NavBar = ({ navArrayLinks }) => {
         open={open}
         anchor="left"
         onClose={() => setOpen(false)}
-        sx={{ display: { xs: "flex", sm: "none" } }}
+        sx={{
+          display: { xs: "flex", sm: "none" },
+          "& .MuiDrawer-paper": {
+            bgcolor: "#0D1117",
+            borderRight: "1px solid rgba(255,255,255,0.08)",
+            minWidth: 240,
+          },
+        }}
       >
         <NavListDrawer navArrayLinks={navArrayLinks} setOpen={setOpen} />
       </Drawer>
@@ -94,15 +140,3 @@ const NavBar = ({ navArrayLinks }) => {
 };
 
 export default NavBar;
-
-{
-  /* <Button
-                color="inherit"
-                key={item.title}
-                onClick={
-                  location.pathname === "/" ? urlPath : () => urlPathJobs(index)
-                }
-              >
-                {item.title}
-              </Button> */
-}
