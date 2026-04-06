@@ -73,7 +73,7 @@ function AboutMe() {
             mb: { xs: 4, md: 5 },
           }}
         >
-          <Typography
+          {/* <Typography
             sx={{
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: "0.62rem",
@@ -82,9 +82,15 @@ function AboutMe() {
             }}
           >
             01 /
-          </Typography>
+          </Typography> */}
           <Box
-            sx={{ width: 5, height: 5, bgcolor: AMBER, borderRadius: "50%", flexShrink: 0 }}
+            sx={{
+              width: 5,
+              height: 5,
+              bgcolor: AMBER,
+              borderRadius: "50%",
+              flexShrink: 0,
+            }}
           />
           <Typography
             sx={{
@@ -102,7 +108,12 @@ function AboutMe() {
       </motion.div>
 
       {/* Bio: avatar + text */}
-      <Grid container spacing={{ xs: 4, md: 5 }} alignItems="center" sx={{ mb: { xs: 5, md: 7 } }}>
+      <Grid
+        container
+        spacing={{ xs: 4, md: 5 }}
+        alignItems="center"
+        sx={{ mb: { xs: 5, md: 7 } }}
+      >
         <Grid xs={12} md={4} sx={{ display: "flex", justifyContent: "center" }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -183,18 +194,15 @@ function AboutMe() {
             mb: { xs: 3, md: 4 },
           }}
         >
-          <Typography
-            sx={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "0.62rem",
-              color: AMBER,
-              letterSpacing: "0.22em",
-            }}
-          >
-            02 /
-          </Typography>
+          
           <Box
-            sx={{ width: 5, height: 5, bgcolor: AMBER, borderRadius: "50%", flexShrink: 0 }}
+            sx={{
+              width: 5,
+              height: 5,
+              bgcolor: AMBER,
+              borderRadius: "50%",
+              flexShrink: 0,
+            }}
           />
           <Typography
             sx={{

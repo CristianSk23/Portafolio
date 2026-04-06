@@ -16,7 +16,7 @@ const BORDER = "rgba(255,255,255,0.07)";
 
 const urlGit = "https://github.com/CristianSk23";
 const urlLinke = "https://www.linkedin.com/in/cristian-castano23/";
-const email = "cristian200127@gmail.com";
+const email = "cristiancp.dev@gmail.com";
 
 const Contact = () => {
   return (
@@ -36,19 +36,22 @@ const Contact = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: { xs: 4, md: 5 } }}>
-          <Typography
-            sx={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "0.62rem",
-              color: AMBER,
-              letterSpacing: "0.22em",
-            }}
-          >
-            04 /
-          </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 2,
+            mb: { xs: 4, md: 5 },
+          }}
+        >
           <Box
-            sx={{ width: 5, height: 5, bgcolor: AMBER, borderRadius: "50%", flexShrink: 0 }}
+            sx={{
+              width: 5,
+              height: 5,
+              bgcolor: AMBER,
+              borderRadius: "50%",
+              flexShrink: 0,
+            }}
           />
           <Typography
             sx={{
@@ -121,8 +124,8 @@ const Contact = () => {
             }}
           >
             Estoy entusiasmado con la posibilidad de colaborar en proyectos
-            increíbles. Si algo de mi portafolio te llama la atención, no
-            dudes en escribirme.
+            increíbles. Si algo de mi portafolio te llama la atención, no dudes
+            en escribirme.
           </Typography>
 
           {/* Buttons */}

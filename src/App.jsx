@@ -23,6 +23,17 @@ import imageVg3 from "./components/Design/Tech/ft6VG.jpg";
 import imageGD1 from "./components/Design/Tech/ft7GD.jpg";
 import imageGD2 from "./components/Design/Tech/ft9GD.jpg";
 import imageGD3 from "./components/Design/Tech/ft10GD.jpg";
+import imageAgend1 from "./components/Design/AgendaCultural/ft1.jpeg";
+import imageAgend2 from "./components/Design/AgendaCultural/ft2.jpeg";
+import imageAgend3 from "./components/Design/AgendaCultural/ft3.jpeg";
+
+// ── Topin images ──────────────────────────────────────────────────────────────
+ import imageTopin1 from "./components/Design/Topin/topinLogo.jpeg";
+ import imageTopin2 from "./components/Design/Topin/ft1.jpeg";
+ import imageTopin3 from "./components/Design/Topin/ft2.jpeg";
+ import imageTopin4 from "./components/Design/Topin/ft3.jpeg";
+ import imageTopin5 from "./components/Design/Topin/ft4.jpeg";
+
 
 import "./StylesA.css";
 
@@ -64,19 +75,14 @@ function TabNav({ activeSection, setActiveSection }) {
             textTransform: "uppercase",
             py: "9px",
             borderRadius: "8px",
-            color:
-              activeSection === tab.key ? "#14151A" : MUTED,
-            bgcolor:
-              activeSection === tab.key ? AMBER : "transparent",
+            color: activeSection === tab.key ? "#14151A" : MUTED,
+            bgcolor: activeSection === tab.key ? AMBER : "transparent",
             fontWeight: activeSection === tab.key ? 700 : 400,
             transition: "all 0.22s ease",
             "&:hover": {
               bgcolor:
-                activeSection === tab.key
-                  ? AMBER
-                  : "rgba(255,255,255,0.05)",
-              color:
-                activeSection === tab.key ? "#14151A" : TEXT,
+                activeSection === tab.key ? AMBER : "rgba(255,255,255,0.05)",
+              color: activeSection === tab.key ? "#14151A" : TEXT,
             },
           }}
         >
@@ -114,6 +120,7 @@ function App() {
       title: "TechNook",
       label:
         "TechNook, una plataforma E-Commerce cuidadosamente creada por un equipo de 8 desarrolladores.",
+      tags: ["Node.js", "React", "PostgreSQL", "OAuth", "Bootstrap", "MercadoPago"],
       image: [imageTech1, imageTech2, imageTech3],
     },
     {
@@ -121,13 +128,32 @@ function App() {
       title: "Web sobre Videojuegos",
       label:
         "Aplicación web para amantes de los videojuegos, permite explorar y gestionar información de juegos",
+      tags: ["Node.js", "React", "PostgreSQL","CSS"],
       image: [imageVg1, imageVg2, imageVg3],
     },
     {
       id: 2,
       title: "Desarrollo de Videojuegos",
       label: "Galería de Proyectos como desarrollador de Videojuegos.",
+      tags: ["Unity", "C#", "Blender"],
       image: [imageGD1, imageGD2, imageGD3],
+    },
+    {
+      id: 3,
+      title: "Topin",
+      label:
+        "Plataforma SaaS de gestión para restaurantes en fase de adopción comercial. Incluye módulos de mesas, pedidos, señalización digital en tiempo real para Smart TV y panel administrativo.",
+      tags: ["Node.js", "React", "PostgreSQL", "Socket.IO", "Tailwind"],
+      image: [imageTopin1,imageTopin2,imageTopin3,imageTopin4,imageTopin5],
+    },
+    {
+      id: 4,
+      title: "Agenda Cultural",
+      label:
+        "Aplicativo web de reservas de ambientes institucionales para el SENA. Incluye autenticación por roles, validación de disponibilidad en tiempo real y calendario público con temática mensual.",
+      tags: ["Laravel", "PHP", "MySQL"],
+      // Cuando tengas las imágenes, reemplaza [] por [imageAC1, imageAC2, imageAC3]
+      image: [imageAgend1, imageAgend2, imageAgend3],
     },
   ];
 
@@ -138,10 +164,7 @@ function App() {
     <>
       {/* ── Mobile NavBar (hidden on desktop) ── */}
       <Box sx={{ display: { xs: "block", md: "none" } }}>
-        <NavBar
-          navArrayLinks={navArrayLinks}
-          onNavigate={handleNavigation}
-        />
+        <NavBar navArrayLinks={navArrayLinks} onNavigate={handleNavigation} />
       </Box>
 
       {/* ── Page layout ── */}
@@ -186,7 +209,10 @@ function App() {
                   <>
                     {/* Mobile: all sections scroll */}
                     <Box
-                      sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column" }}
+                      sx={{
+                        display: { xs: "flex", md: "none" },
+                        flexDirection: "column",
+                      }}
                     >
                       <div id="home">
                         <Home />
@@ -217,7 +243,7 @@ function App() {
                   </>
                 }
               />
-              <Route path="/info/:id" element={<InfoJobs />} />
+              <Route path="/info/:id" element={<InfoJobs infoJobsData={infoJobs} />} />
             </Routes>
           </Box>
         </Box>
