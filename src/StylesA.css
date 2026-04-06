@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,42 +8,43 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #0d1117;
+  background: #14151A;
 }
 
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #14151A;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2b38;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3b4a;
 }
 
-#root {
-  position: relative;
-  z-index: 1;
+/* Mobile anchor offset (navbar height) */
+@media (max-width: 899px) {
+  #home,
+  #SobreMi,
+  #Portafolio,
+  #Contactame {
+    scroll-margin-top: 72px;
+  }
 }
 
-/* Offset anchor scroll targets below sticky navbar */
-:target::before {
-  content: "";
-  display: block;
-  height: 64px;
-  margin-top: -64px;
-}
-
-/* Smooth image transitions */
 img {
   transition: opacity 0.3s ease;
 }
 
-/* Remove default outline, keep focus-visible for a11y */
 *:focus:not(:focus-visible) {
   outline: none;
 }
 
 *:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #F5A623;
   outline-offset: 2px;
 }

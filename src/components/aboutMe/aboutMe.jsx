@@ -1,8 +1,6 @@
-import { Avatar, Box, Container, Typography } from "@mui/material";
-import React from "react";
-import { motion } from "framer-motion";
-
+import { Avatar, Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import { motion } from "framer-motion";
 
 import jsIcon from "../Design/icons/js.png";
 import reactIcon from "../Design/icons/react.png";
@@ -16,7 +14,15 @@ import bootstrapIcon from "../Design/icons/bootstrap.png";
 import unityIcon from "../Design/icons/unity.png";
 import githubIcon from "../Design/icons/github.png";
 import perfilAi from "../Design/perfilAi.jpg";
-import wllpaper from "../Design/wllpaper3.jpg";
+
+const AMBER = "#F5A623";
+const AMBER_DIM = "rgba(245,166,35,0.09)";
+const AMBER_BORDER = "rgba(245,166,35,0.24)";
+const SECTION_BG = "#1E1F27";
+const CARD_BG = "#252631";
+const TEXT = "#E8EAF0";
+const MUTED = "#7A7D8C";
+const BORDER = "rgba(255,255,255,0.07)";
 
 const iconsData = [
   { icon: htmlIcon, label: "HTML" },
@@ -32,13 +38,12 @@ const iconsData = [
   { icon: githubIcon, label: "GitHub" },
 ];
 
-const containerVariants = {
+const iconStagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.07 } },
+  visible: { transition: { staggerChildren: 0.06 } },
 };
-
-const iconVariant = {
-  hidden: { opacity: 0, y: 20 },
+const iconItem = {
+  hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
@@ -46,206 +51,224 @@ function AboutMe() {
   return (
     <Box
       sx={{
-        backgroundImage: `linear-gradient(135deg, rgba(13,17,23,0.96) 0%, rgba(13,17,23,0.92) 100%), url(${wllpaper})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-        py: { xs: 10, md: 14 },
+        bgcolor: SECTION_BG,
+        border: `1px solid ${BORDER}`,
+        borderRadius: { xs: 0, md: "16px" },
+        p: { xs: 3, md: "40px" },
+        mb: { xs: "12px", md: 0 },
       }}
     >
-      <Container maxWidth="lg">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+      {/* Section header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 2,
+            mb: { xs: 4, md: 5 },
+          }}
         >
           <Typography
-            variant="overline"
             sx={{
-              color: "primary.light",
-              letterSpacing: "0.2em",
-              display: "block",
-              textAlign: "center",
-              mb: 1,
-              fontSize: "0.72rem",
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.62rem",
+              color: AMBER,
+              letterSpacing: "0.22em",
             }}
           >
-            CONÓCEME
+            01 /
           </Typography>
+          <Box
+            sx={{ width: 5, height: 5, bgcolor: AMBER, borderRadius: "50%", flexShrink: 0 }}
+          />
           <Typography
-            variant="h3"
             sx={{
-              fontWeight: 700,
-              textAlign: "center",
-              mb: 8,
-              background: "linear-gradient(135deg, #F8FAFC 40%, #94A3B8 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: { xs: "1.8rem", md: "2.2rem" },
+              letterSpacing: "0.05em",
+              color: TEXT,
+              lineHeight: 1,
             }}
           >
-            Sobre Mí
+            SOBRE MÍ
           </Typography>
-        </motion.div>
+          <Box sx={{ flex: 1, height: "1px", bgcolor: BORDER }} />
+        </Box>
+      </motion.div>
 
-        {/* Bio: avatar + text */}
-        <Grid container spacing={6} alignItems="center" sx={{ mb: 10 }}>
-          <Grid xs={12} md={4} sx={{ display: "flex", justifyContent: "center" }}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.88 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+      {/* Bio: avatar + text */}
+      <Grid container spacing={{ xs: 4, md: 5 }} alignItems="center" sx={{ mb: { xs: 5, md: 7 } }}>
+        <Grid xs={12} md={4} sx={{ display: "flex", justifyContent: "center" }}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+          >
+            <Box
+              sx={{
+                position: "relative",
+                display: "inline-block",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  inset: -4,
+                  borderRadius: "50%",
+                  background: `linear-gradient(135deg, ${AMBER}, #FF6B35)`,
+                  zIndex: 0,
+                },
+              }}
             >
-              <Box
+              <Avatar
+                alt="Cristian Castaño"
+                src={perfilAi}
                 sx={{
+                  width: { xs: 140, sm: 170, md: 200 },
+                  height: { xs: 140, sm: 170, md: 200 },
                   position: "relative",
-                  display: "inline-block",
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    inset: -4,
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, #2563EB, #7C3AED)",
-                    zIndex: 0,
-                  },
+                  zIndex: 1,
+                  border: `4px solid ${SECTION_BG}`,
                 }}
-              >
-                <Avatar
-                  alt="Cristian Castaño"
-                  src={perfilAi}
-                  sx={{
-                    width: { xs: 150, sm: 180, md: 220 },
-                    height: { xs: 150, sm: 180, md: 220 },
-                    position: "relative",
-                    zIndex: 1,
-                    border: "4px solid #0D1117",
-                  }}
-                />
-              </Box>
-            </motion.div>
-          </Grid>
-
-          <Grid xs={12} md={8}>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Typography
-                variant="body1"
-                sx={{
-                  fontSize: { xs: "1rem", md: "1.15rem" },
-                  lineHeight: 1.9,
-                  color: "text.secondary",
-                }}
-              >
-                Apasionado desarrollador con experiencia en el fascinante mundo
-                de los videojuegos y una inmersión actual en el emocionante
-                campo del desarrollo web. Siempre en busca de desafíos que
-                impulsen el crecimiento profesional. Actualmente aprendiendo
-                sobre el desarrollo de software, ansioso por contribuir a
-                proyectos innovadores y aprender continuamente en esta
-                apasionante travesía tecnológica.
-              </Typography>
-            </motion.div>
-          </Grid>
+              />
+            </Box>
+          </motion.div>
         </Grid>
 
-        {/* Technologies header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <Typography
-            variant="overline"
-            sx={{
-              color: "primary.light",
-              letterSpacing: "0.2em",
-              display: "block",
-              textAlign: "center",
-              mb: 1,
-              fontSize: "0.72rem",
-            }}
+        <Grid xs={12} md={8}>
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
           >
-            STACK
-          </Typography>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 700,
-              textAlign: "center",
-              mb: 6,
-              color: "text.primary",
-            }}
-          >
-            Tecnologías
-          </Typography>
-        </motion.div>
+            <Typography
+              sx={{
+                fontFamily: "'Manrope', sans-serif",
+                fontSize: { xs: "0.92rem", md: "1rem" },
+                lineHeight: 1.95,
+                color: MUTED,
+                fontWeight: 400,
+              }}
+            >
+              Desarrollador Full Stack con más de 4 años de experiencia
+              construyendo aplicaciones web para distintos contextos y
+              necesidades. Me he formado de manera autodidacta y a través de
+              proyectos reales. He desarrollado soluciones que van desde
+              sistemas de gestión institucional hasta plataformas SaaS propias,
+              adaptándome a cada stack según el problema a resolver. Disfruto
+              construir productos con impacto real y me desenvuelvo bien tanto
+              en equipos como de manera independiente.
+            </Typography>
+          </motion.div>
+        </Grid>
+      </Grid>
 
-        {/* Tech icons grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
+      {/* Tech section header */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45 }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 2,
+            mb: { xs: 3, md: 4 },
+          }}
         >
-          <Grid container spacing={2} justifyContent="center">
-            {iconsData.map((icon) => (
-              <Grid key={icon.label} xs={4} sm={3} md={2}>
-                <motion.div variants={iconVariant}>
-                  <Box
+          <Typography
+            sx={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.62rem",
+              color: AMBER,
+              letterSpacing: "0.22em",
+            }}
+          >
+            02 /
+          </Typography>
+          <Box
+            sx={{ width: 5, height: 5, bgcolor: AMBER, borderRadius: "50%", flexShrink: 0 }}
+          />
+          <Typography
+            sx={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: { xs: "1.8rem", md: "2.2rem" },
+              letterSpacing: "0.05em",
+              color: TEXT,
+              lineHeight: 1,
+            }}
+          >
+            TECNOLOGÍAS
+          </Typography>
+          <Box sx={{ flex: 1, height: "1px", bgcolor: BORDER }} />
+        </Box>
+      </motion.div>
+
+      {/* Icons grid */}
+      <motion.div
+        variants={iconStagger}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-40px" }}
+      >
+        <Grid container spacing={1.5} justifyContent="flex-start">
+          {iconsData.map((icon) => (
+            <Grid key={icon.label} xs={4} sm={3} md={2}>
+              <motion.div variants={iconItem}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 1.2,
+                    p: { xs: 1.5, md: 2 },
+                    borderRadius: "10px",
+                    border: `1px solid ${BORDER}`,
+                    bgcolor: CARD_BG,
+                    transition: "all 0.22s ease",
+                    cursor: "default",
+                    "&:hover": {
+                      bgcolor: AMBER_DIM,
+                      border: `1px solid ${AMBER_BORDER}`,
+                      transform: "translateY(-4px)",
+                      boxShadow: `0 8px 24px rgba(245,166,35,0.12)`,
+                    },
+                  }}
+                >
+                  <Avatar
+                    alt={icon.label}
+                    src={icon.icon}
+                    variant="square"
                     sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      gap: 1.5,
-                      p: { xs: 1.5, md: 2 },
-                      borderRadius: 2,
-                      border: "1px solid rgba(255,255,255,0.06)",
-                      bgcolor: "rgba(255,255,255,0.02)",
-                      transition: "all 0.25s ease",
-                      cursor: "default",
-                      "&:hover": {
-                        bgcolor: "rgba(37,99,235,0.1)",
-                        border: "1px solid rgba(37,99,235,0.3)",
-                        transform: "translateY(-4px)",
-                        boxShadow: "0 8px 24px rgba(37,99,235,0.15)",
-                      },
+                      width: { xs: 34, md: 46 },
+                      height: { xs: 34, md: 46 },
+                      "& img": { objectFit: "contain" },
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: { xs: "0.58rem", md: "0.66rem" },
+                      color: MUTED,
+                      textAlign: "center",
+                      lineHeight: 1.2,
                     }}
                   >
-                    <Avatar
-                      alt={icon.label}
-                      src={icon.icon}
-                      variant="square"
-                      sx={{
-                        width: { xs: 38, md: 52 },
-                        height: { xs: 38, md: 52 },
-                        "& img": { objectFit: "contain" },
-                      }}
-                    />
-                    <Typography
-                      variant="caption"
-                      sx={{
-                        color: "text.secondary",
-                        fontWeight: 500,
-                        textAlign: "center",
-                        fontSize: { xs: "0.65rem", md: "0.75rem" },
-                      }}
-                    >
-                      {icon.label}
-                    </Typography>
-                  </Box>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </motion.div>
-      </Container>
+                    {icon.label}
+                  </Typography>
+                </Box>
+              </motion.div>
+            </Grid>
+          ))}
+        </Grid>
+      </motion.div>
     </Box>
   );
 }

@@ -1,7 +1,7 @@
 import {
   Box,
   Button,
-  Container,
+  Chip,
   Dialog,
   DialogActions,
   DialogContent,
@@ -10,7 +10,6 @@ import {
   IconButton,
   Typography,
   styled,
-  Chip,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -25,19 +24,36 @@ import gameDv4 from "../Design/JobsVid/gameDeveloper/Vid6.mp4";
 import gameDv5 from "../Design/JobsVid/gameDeveloper/Vid8.mp4";
 import gameDv6 from "../Design/JobsVid/gameDeveloper/Vid9.mp4";
 
-import wllpaper from "../Design/wllpaper3.jpg";
 import CloseIcon from "@mui/icons-material/Close";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { useNavigate } from "react-router-dom";
+
+const AMBER = "#F5A623";
+const AMBER_DIM = "rgba(245,166,35,0.09)";
+const AMBER_BORDER = "rgba(245,166,35,0.24)";
+const SECTION_BG = "#1E1F27";
+const CARD_BG = "#252631";
+const TEXT = "#E8EAF0";
+const MUTED = "#7A7D8C";
+const BORDER = "rgba(255,255,255,0.07)";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialog-paper": {
+    bgcolor: CARD_BG,
+    background: CARD_BG,
+    border: `1px solid ${BORDER}`,
+    borderRadius: "12px",
+  },
   "& .MuiDialogContent-root": { padding: theme.spacing(2) },
   "& .MuiDialogActions-root": { padding: theme.spacing(1) },
 }));
 
 const InfoJobs = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [indexText, setIndexText] = useState(0);
 
@@ -61,7 +77,7 @@ const InfoJobs = () => {
       id: 1,
       title: "Web sobre Videojuegos",
       label:
-        "Aplicación web orientada a los amantes de los videojuegos, que permite explorar y gestionar información de videojuegos mediante la integración con la API de Rawg.io. La plataforma brinda a los usuarios la capacidad de buscar videojuegos, filtrar resultados, ver detalles y crear tarjetas personalizadas con información de sus juegos favoritos.",
+        "Aplicación web orientada a los amantes de los videojuegos, que permite explorar y gestionar información de videojuegos mediante la integración con la API de Rawg.io. La plataforma brinda a los usuarios la capacidad de buscar videojuegos, filtrar resultados, ver detalles y crear tarjetas personalizadas.",
       video: videoWebVideogames,
       multiVid: true,
       urlGithub: "https://github.com/CristianSk23/ProyectoIndividual",
@@ -95,59 +111,83 @@ const InfoJobs = () => {
   ];
 
   const currentInfo = info[parseInt(id)];
-
-  const handleClickOpen = (index) => {
-    setOpen(true);
-    setIndexText(index);
-  };
-
+  const handleClickOpen = (index) => { setOpen(true); setIndexText(index); };
   const handleClose = () => setOpen(false);
-
-  const newWindowPage = () => {
-    if (currentInfo.urlPage) window.open(currentInfo.urlPage);
-  };
-
+  const newWindowPage = () => { if (currentInfo.urlPage) window.open(currentInfo.urlPage); };
   const newWindowGithub = (url) => window.open(url);
 
   return (
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundImage: `linear-gradient(135deg, rgba(13,17,23,0.97) 0%, rgba(13,17,23,0.93) 100%), url(${wllpaper})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-        py: { xs: 8, md: 12 },
+        bgcolor: "#14151A",
+        py: { xs: 4, md: 5 },
+        px: { xs: 2, md: 4 },
       }}
     >
-      <Container maxWidth="lg">
-        {/* Title & tags */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+      {/* Back button */}
+      <motion.div
+        initial={{ opacity: 0, x: -16 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
+      >
+        <Button
+          onClick={() => navigate(-1)}
+          startIcon={<ArrowBackIcon sx={{ fontSize: "0.9rem !important" }} />}
+          sx={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "0.68rem",
+            letterSpacing: "0.06em",
+            textTransform: "none",
+            color: MUTED,
+            border: `1px solid ${BORDER}`,
+            mb: 3,
+            px: 2,
+            py: 0.7,
+            "&:hover": { color: TEXT, borderColor: "rgba(255,255,255,0.18)" },
+          }}
         >
+          Volver
+        </Button>
+      </motion.div>
+
+      <Box
+        sx={{
+          bgcolor: SECTION_BG,
+          border: `1px solid ${BORDER}`,
+          borderRadius: "16px",
+          p: { xs: 3, md: "40px" },
+          maxWidth: 1100,
+        }}
+      >
+        {/* Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
+            <Typography
+              sx={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "0.62rem",
+                color: AMBER,
+                letterSpacing: "0.22em",
+              }}
+            >
+              PROYECTO /
+            </Typography>
+            <Box sx={{ flex: 1, height: "1px", bgcolor: BORDER }} />
+          </Box>
+
           <Typography
-            variant="overline"
             sx={{
-              color: "primary.light",
-              letterSpacing: "0.2em",
-              display: "block",
-              mb: 1,
-              fontSize: "0.72rem",
-            }}
-          >
-            PROYECTO
-          </Typography>
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 800,
-              mb: 3,
-              background: "linear-gradient(135deg, #F8FAFC 40%, #94A3B8 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              fontSize: { xs: "2rem", sm: "2.8rem", md: "3.5rem" },
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: { xs: "2.2rem", md: "3.2rem" },
+              letterSpacing: "0.04em",
+              color: TEXT,
+              lineHeight: 1,
+              mb: 2.5,
             }}
           >
             {currentInfo.title}
@@ -155,18 +195,19 @@ const InfoJobs = () => {
 
           {/* Tags */}
           {currentInfo.tags && (
-            <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 4 }}>
+            <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 3.5 }}>
               {currentInfo.tags.map((tag) => (
                 <Chip
                   key={tag}
                   label={tag}
                   size="small"
                   sx={{
-                    bgcolor: "rgba(37,99,235,0.1)",
-                    color: "#60A5FA",
-                    border: "1px solid rgba(37,99,235,0.22)",
-                    fontWeight: 500,
-                    fontSize: "0.78rem",
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: "0.65rem",
+                    bgcolor: AMBER_DIM,
+                    color: AMBER,
+                    border: `1px solid ${AMBER_BORDER}`,
+                    height: 24,
                   }}
                 />
               ))}
@@ -176,18 +217,18 @@ const InfoJobs = () => {
 
         {/* Description */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.6 }}
+          transition={{ delay: 0.12, duration: 0.55 }}
         >
           <Typography
-            variant="body1"
             sx={{
-              color: "text.secondary",
+              fontFamily: "'Manrope', sans-serif",
+              color: MUTED,
               lineHeight: 1.9,
-              mb: 5,
-              fontSize: { xs: "1rem", md: "1.1rem" },
-              maxWidth: 800,
+              mb: 4,
+              fontSize: { xs: "0.9rem", md: "1rem" },
+              maxWidth: 760,
             }}
           >
             {currentInfo.label}
@@ -196,21 +237,31 @@ const InfoJobs = () => {
 
         {/* Action buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25, duration: 0.5 }}
+          transition={{ delay: 0.22, duration: 0.5 }}
         >
-          <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", mb: 6 }}>
-            {/* GitHub buttons */}
+          <Box sx={{ display: "flex", gap: 1.5, flexWrap: "wrap", mb: 5 }}>
             {currentInfo.id !== 2 &&
               (Array.isArray(currentInfo.urlGithub) ? (
                 currentInfo.urlGithub.map((url, index) => (
                   <Button
                     key={index}
                     onClick={() => newWindowGithub(url)}
-                    startIcon={<GitHubIcon />}
-                    variant="contained"
-                    sx={{ cursor: "pointer" }}
+                    startIcon={<GitHubIcon sx={{ fontSize: "0.9rem !important" }} />}
+                    sx={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: "0.7rem",
+                      letterSpacing: "0.05em",
+                      textTransform: "none",
+                      color: MUTED,
+                      border: `1px solid ${BORDER}`,
+                      bgcolor: "rgba(255,255,255,0.03)",
+                      px: 2.5,
+                      py: 0.9,
+                      cursor: "pointer",
+                      "&:hover": { bgcolor: "rgba(255,255,255,0.07)", color: TEXT },
+                    }}
                   >
                     {currentInfo.titleGit[index]}
                   </Button>
@@ -218,28 +269,41 @@ const InfoJobs = () => {
               ) : (
                 <Button
                   onClick={() => newWindowGithub(currentInfo.urlGithub)}
-                  startIcon={<GitHubIcon />}
-                  variant="contained"
-                  sx={{ cursor: "pointer" }}
+                  startIcon={<GitHubIcon sx={{ fontSize: "0.9rem !important" }} />}
+                  sx={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: "0.7rem",
+                    letterSpacing: "0.05em",
+                    textTransform: "none",
+                    color: MUTED,
+                    border: `1px solid ${BORDER}`,
+                    bgcolor: "rgba(255,255,255,0.03)",
+                    px: 2.5,
+                    py: 0.9,
+                    cursor: "pointer",
+                    "&:hover": { bgcolor: "rgba(255,255,255,0.07)", color: TEXT },
+                  }}
                 >
                   Repositorio
                 </Button>
               ))}
 
-            {/* Live page button */}
             {currentInfo.urlPage && (
               <Button
                 onClick={newWindowPage}
-                startIcon={<LaunchIcon />}
-                variant="outlined"
+                startIcon={<LaunchIcon sx={{ fontSize: "0.9rem !important" }} />}
                 sx={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.05em",
+                  textTransform: "none",
+                  color: "#14151A",
+                  bgcolor: AMBER,
+                  fontWeight: 700,
+                  px: 2.5,
+                  py: 0.9,
                   cursor: "pointer",
-                  borderColor: "rgba(255,255,255,0.15)",
-                  color: "text.primary",
-                  "&:hover": {
-                    borderColor: "primary.main",
-                    bgcolor: "rgba(37,99,235,0.08)",
-                  },
+                  "&:hover": { bgcolor: "#FFB833" },
                 }}
               >
                 Ver sitio web
@@ -250,17 +314,17 @@ const InfoJobs = () => {
 
         {/* Video section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.6 }}
+          transition={{ delay: 0.3, duration: 0.55 }}
         >
           {currentInfo.multiVid ? (
             <Box
               sx={{
-                borderRadius: 3,
+                borderRadius: "10px",
                 overflow: "hidden",
-                border: "1px solid rgba(255,255,255,0.08)",
-                boxShadow: "0 24px 60px rgba(0,0,0,0.5)",
+                border: `1px solid ${BORDER}`,
+                boxShadow: "0 20px 50px rgba(0,0,0,0.4)",
               }}
             >
               <video width="100%" height="auto" controls autoPlay loop>
@@ -268,17 +332,17 @@ const InfoJobs = () => {
               </video>
             </Box>
           ) : (
-            <Grid container spacing={3}>
+            <Grid container spacing={2}>
               {currentInfo.video.map((video, index) => (
                 <Grid item xs={12} sm={6} md={4} key={index}>
                   <Box
                     sx={{
-                      borderRadius: 2,
+                      borderRadius: "10px",
                       overflow: "hidden",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                      bgcolor: "rgba(22,27,34,0.85)",
-                      transition: "border-color 0.2s",
-                      "&:hover": { borderColor: "rgba(37,99,235,0.35)" },
+                      border: `1px solid ${BORDER}`,
+                      bgcolor: CARD_BG,
+                      transition: "border-color 0.22s",
+                      "&:hover": { borderColor: AMBER_BORDER },
                     }}
                   >
                     <video width="100%" height="auto" controls autoPlay loop>
@@ -292,14 +356,17 @@ const InfoJobs = () => {
                         startIcon={<PlayCircleOutlineIcon />}
                         onClick={() => handleClickOpen(index)}
                         sx={{
+                          fontFamily: "'JetBrains Mono', monospace",
+                          fontSize: "0.65rem",
+                          textTransform: "none",
+                          letterSpacing: "0.04em",
                           cursor: "pointer",
-                          borderColor: "rgba(255,255,255,0.1)",
-                          color: "text.secondary",
-                          fontSize: "0.78rem",
+                          color: MUTED,
+                          borderColor: BORDER,
                           "&:hover": {
-                            borderColor: "primary.main",
-                            color: "primary.light",
-                            bgcolor: "rgba(37,99,235,0.08)",
+                            borderColor: AMBER_BORDER,
+                            color: AMBER,
+                            bgcolor: AMBER_DIM,
                           },
                         }}
                       >
@@ -312,15 +379,27 @@ const InfoJobs = () => {
             </Grid>
           )}
         </motion.div>
-      </Container>
+      </Box>
 
-      {/* Info dialog */}
+      {/* Dialog */}
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="game-info-dialog-title"
         open={open}
       >
-        <DialogTitle sx={{ m: 0, p: 2, pr: 6 }} id="game-info-dialog-title">
+        <DialogTitle
+          sx={{
+            m: 0,
+            p: "16px 20px",
+            pr: 6,
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: "1.2rem",
+            letterSpacing: "0.04em",
+            color: TEXT,
+            bgcolor: CARD_BG,
+          }}
+          id="game-info-dialog-title"
+        >
           {currentInfo.titleDesc && currentInfo.titleDesc[indexText]}
         </DialogTitle>
         <IconButton
@@ -330,24 +409,39 @@ const InfoJobs = () => {
             position: "absolute",
             right: 8,
             top: 8,
-            color: "text.secondary",
+            color: MUTED,
             cursor: "pointer",
-            "&:hover": { color: "text.primary" },
+            "&:hover": { color: TEXT },
           }}
         >
           <CloseIcon />
         </IconButton>
-        <DialogContent dividers>
-          <Typography sx={{ lineHeight: 1.8, color: "text.secondary" }}>
+        <DialogContent dividers sx={{ bgcolor: CARD_BG, borderColor: BORDER }}>
+          <Typography
+            sx={{
+              fontFamily: "'Manrope', sans-serif",
+              lineHeight: 1.85,
+              color: MUTED,
+              fontSize: "0.9rem",
+            }}
+          >
             {currentInfo.descriptionVg && currentInfo.descriptionVg[indexText]}
           </Typography>
         </DialogContent>
-        <DialogActions>
+        <DialogActions sx={{ bgcolor: CARD_BG, borderTop: `1px solid ${BORDER}` }}>
           <Button
             autoFocus
             onClick={handleClose}
-            variant="contained"
-            sx={{ cursor: "pointer" }}
+            sx={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.68rem",
+              textTransform: "none",
+              color: "#14151A",
+              bgcolor: AMBER,
+              fontWeight: 700,
+              px: 2.5,
+              "&:hover": { bgcolor: "#FFB833" },
+            }}
           >
             Continuar
           </Button>

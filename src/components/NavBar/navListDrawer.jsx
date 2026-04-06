@@ -8,31 +8,46 @@ import {
   Typography,
 } from "@mui/material";
 
+const AMBER = "#F5A623";
+const MUTED = "#7A7D8C";
+const BORDER = "rgba(255,255,255,0.07)";
+
 const NavListDrawer = ({ navArrayLinks, setOpen }) => {
   return (
     <Box sx={{ width: 240 }}>
-      {/* Drawer brand header */}
+      {/* Brand header */}
       <Box
         sx={{
           px: 3,
           py: 2.5,
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          borderBottom: `1px solid ${BORDER}`,
         }}
       >
         <Typography
           sx={{
-            fontWeight: 800,
-            fontSize: "1.2rem",
-            background: "linear-gradient(135deg, #2563EB, #7C3AED)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: "1.5rem",
+            letterSpacing: "0.1em",
+            color: AMBER,
           }}
         >
           CC
         </Typography>
+        <Typography
+          sx={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "0.58rem",
+            color: MUTED,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            mt: 0.3,
+          }}
+        >
+          Cristian Castaño
+        </Typography>
       </Box>
 
-      <List sx={{ pt: 1 }}>
+      <List sx={{ pt: 1.5 }}>
         {navArrayLinks.map((item) => (
           <ListItem disablePadding key={item.title}>
             <ListItemButton
@@ -41,23 +56,36 @@ const NavListDrawer = ({ navArrayLinks, setOpen }) => {
               onClick={() => setOpen(false)}
               sx={{
                 px: 3,
-                py: 1.5,
+                py: 1.4,
                 cursor: "pointer",
-                transition: "background 0.2s",
+                transition: "all 0.18s",
                 "&:hover": {
-                  bgcolor: "rgba(37,99,235,0.1)",
+                  bgcolor: "rgba(245,166,35,0.08)",
+                  "& .MuiListItemIcon-root": { color: AMBER },
+                  "& .nav-label": { color: "#E8EAF0" },
                 },
               }}
             >
-              <ListItemIcon sx={{ minWidth: 36, color: "primary.main" }}>
+              <ListItemIcon
+                sx={{
+                  minWidth: 34,
+                  color: MUTED,
+                  transition: "color 0.18s",
+                  "& svg": { fontSize: "1rem" },
+                }}
+              >
                 {item.icon}
               </ListItemIcon>
               <ListItemText
                 primary={item.title}
+                className="nav-label"
                 primaryTypographyProps={{
-                  fontWeight: 500,
-                  fontSize: "0.95rem",
-                  color: "text.primary",
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  color: MUTED,
+                  transition: "color 0.18s",
                 }}
               />
             </ListItemButton>
